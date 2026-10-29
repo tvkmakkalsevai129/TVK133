@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Staff Login | TVK Makkal Sevai — Athoor</title>
+  <title>Staff Login | TVK Makkal Sevai — Dindigul East (TVK 133)</title>
   <link rel="shortcut icon" href="favicon.png" />
   <link rel="icon" href="favicon.png" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -50,7 +50,7 @@
         🔒 Staff Access Only
       </span>
       <h1 class="text-2xl font-extrabold text-gray-900 mb-1">TVK Makkal Sevai</h1>
-      <p class="text-sm text-gray-500 mb-6">Sign in to manage Athoor constituency grievances.</p>
+      <p class="text-sm text-gray-500 mb-6">Sign in to manage Vedasandur & Dindigul constituency grievances.</p>
 
       <!-- Error Banner -->
       <div id="error-banner" class="hidden bg-red-50 border border-red-200 text-red-700 text-sm px-4 py-3 rounded-lg mb-4">
@@ -60,7 +60,7 @@
       <form onsubmit="handleLogin(event)" class="space-y-4">
         <div>
           <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-          <input type="email" id="login-email" required placeholder="staff@tvkmakkalvai.in"
+          <input type="email" id="login-email" required placeholder="admin133@tvkcm.com"
             class="w-full border border-gray-300 rounded-lg px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#B71C1C]" />
         </div>
         <div>
@@ -88,14 +88,14 @@
 
   <!-- FOOTER -->
   <footer class="bg-[#B71C1C] text-white py-4 px-6 text-center text-xs text-red-200">
-    TVK Makkal Sevai — Athoor Constituency Staff Portal · Powered by SmartBill · Public Grievance Portal
+    TVK Makkal Sevai — Dindigul East District (Vedasandur & Dindigul Constituency) Staff Portal · Powered by SmartBill · Public Grievance Portal
   </footer>
 
   <!-- Supabase SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
   <script>
-    const SUPABASE_URL = "https://ketmppyqpfiyzlxqmvoo.supabase.co";
-    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtldG1wcHlxcGZpeXpseHFtdm9vIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI4MTExMTgsImV4cCI6MjEwODM4NzExOH0.LxeIL5D9nDOnFcMG--hxHNhl6akUmfwBTsFxsA4CZJg";
+    const SUPABASE_URL = "https://vtfuhajbqbrotjsufnrj.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ0ZnVoYWpicWJyb3Rqc3VmbnJqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMyMzkxMzksImV4cCI6MjEwODgxNTEzOX0.RBVDAUDliyTyyLx2D4nnGAKtqaraRhtBy1vvSuGVCXQ";
     const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
     // Every time login page is opened, clear previous session and require fresh credentials

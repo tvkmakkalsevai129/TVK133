@@ -3,11 +3,11 @@
 const crypto = require('crypto');
 const https = require('https');
 
-const R2_ACCOUNT_ID = process.env.R2_ACCOUNT_ID || '6e2879629d3201095ef1fedd72735d80';
-const R2_ACCESS_KEY_ID = process.env.R2_ACCESS_KEY_ID || '633aa762c2f2d41fbc8cdb84f5c53e12';
-const R2_SECRET_ACCESS_KEY = process.env.R2_SECRET_ACCESS_KEY || '468cc328ff571c940de9035a0288b998015a1ab00e723faa02eee001d8b2d63b';
-const R2_BUCKET_NAME = process.env.R2_BUCKET_NAME || 'tvk-complaints-media';
-const R2_PUBLIC_DOMAIN = process.env.R2_PUBLIC_DOMAIN || 'https://pub-b22815f6ae1c47518f37561b8b274210.r2.dev';
+const R2_ACCOUNT_ID = process.env.R2_ACCOUNT_ID || 'bdf08c4132cd5184a3a79f7efb29fdbb';
+const R2_ACCESS_KEY_ID = process.env.R2_ACCESS_KEY_ID || '9f71affe9b173aa511234907bbbe56bd';
+const R2_SECRET_ACCESS_KEY = process.env.R2_SECRET_ACCESS_KEY || '0459f66505a4df78deccee09f78a6773b370734e5338abc9f173ebbc629c8fef';
+const R2_BUCKET_NAME = process.env.R2_BUCKET_NAME || 'tvk';
+const R2_PUBLIC_DOMAIN = process.env.R2_PUBLIC_DOMAIN || 'https://pub-e502f5817f674844b0417bb8958b4d87.r2.dev';
 const R2_ENDPOINT = `${R2_ACCOUNT_ID}.r2.cloudflarestorage.com`;
 
 function hmac(key, string) {

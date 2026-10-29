@@ -19,8 +19,8 @@ export default async function handler(req, res) {
   try {
     const { action, id, ids, status, officer, note, updated_by } = req.body;
 
-    const supabaseUrl = process.env.SUPABASE_URL || 'https://ketmppyqpfiyzlxqmvoo.supabase.co';
-    const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtldG1wcHlxcGZpeXpseHFtdm9vIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc5MjgxMTExOCwiZXhwIjoyMTA4Mzg3MTE4fQ.TgexqlM8FAFVIhGsWbjzpe47t0vuD9aOm7-9DGTY8j4';
+    const supabaseUrl = process.env.SUPABASE_URL || 'https://vtfuhajbqbrotjsufnrj.supabase.co';
+    const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ0ZnVoYWpicWJyb3Rqc3VmbnJqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc5MzIzOTEzOSwiZXhwIjoyMTA4ODE1MTM5fQ.vf0kuOmewG3sda9rR_m2H2ZAdcJqMy0YdXA230AdxoQ';
 
     const headers = {
       'apikey': serviceRoleKey,
