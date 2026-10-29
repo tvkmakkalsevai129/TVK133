@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full antialiased">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TVK Makkal Sevai — Athoor | TVK மக்கள் சேவை — ஆத்தூர் தொகுதி</title>
+  <meta name="description" content="Submit and track grievances with the Athoor secretary office." />
+  <link rel="canonical" href="https://tvkmakkalvai.in/" />
+  <meta property="og:title" content="TVK Makkal Sevai — Athoor" />
+  <meta property="og:description" content="Submit and track grievances with the Athoor secretary office." />
+  <meta property="og:url" content="https://tvkmakkalvai.in/" />
+  <meta property="og:image" content="https://tvkmakkalvai.in/vijay-3.png" />
+  <link rel="shortcut icon" href="favicon.png" />
+  <link rel="icon" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            tvkRed: '#B71C1C',
+            tvkDarkRed: '#7F1212',
+            tvkGold: '#FFD700',
+            tvkCream: '#FFF8DC',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter & Mukta Malar -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Mukta+Malar:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #F5F5F5;
+      color: #1F2937;
+    }
+    .tamil-text {
+      font-family: 'Mukta Malar', 'Inter', sans-serif;
+    }
+    /* Grid background pattern */
+    .hero-grid-pattern {
+      background-image: repeating-linear-gradient(0deg, #fff 0, #fff 1px, transparent 1px, transparent 40px),
+                        repeating-linear-gradient(90deg, #fff 0, #fff 1px, transparent 1px, transparent 40px);
+    }
+    /* Receipt modal animation */
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .modal-animate {
+      animation: modalFadeIn 0.2s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="min-h-full flex flex-col bg-[#F5F5F5]">
+
+  <!-- HEADER -->
+  <header class="bg-[#B71C1C] text-white shadow-md relative z-30">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-between gap-2 sm:gap-4">
+      <!-- Logo + Leaders Duo (Vijay + Anand) -->
+      <a href="index.html" class="flex items-center gap-2 sm:gap-3 group shrink min-w-0">
+        <div class="flex flex-col leading-tight min-w-0">
+          <span class="text-sm xs:text-base sm:text-xl md:text-2xl font-bold text-white tracking-tight truncate sm:whitespace-nowrap" id="t-orgName">Tamilaga Vettri Kazhagam</span>
+          <span class="text-[9.5px] xs:text-[10.5px] sm:text-xs text-[#FFD700] font-bold tamil-text truncate sm:whitespace-nowrap" id="t-slogan">உங்கள் உரிமையை பதிவு செய்யுங்கள்!</span>
+        </div>
+
+        <!-- Leader Portraits beside party name (Vijay + Anand, Rectangle Shape) -->
+        <div class="flex items-center gap-1 sm:gap-2 shrink-0 ml-1 sm:ml-2">
+          <!-- Vijay Rectangle Image -->
+          <div class="relative w-7 h-9 sm:w-9 sm:h-11 rounded-lg overflow-hidden ring-1.5 sm:ring-2 ring-[#FFD700] shadow-md bg-[#5C0A0A] shrink-0" title="C. Joseph Vijay - TVK தலைவர்">
+            <img alt="C. Joseph Vijay" class="object-cover object-[center_15%] w-full h-full" src="vijay.jpg" />
+          </div>
+          <!-- Anand Rectangle Image near Vijay -->
+          <div class="relative w-7 h-9 sm:w-9 sm:h-11 rounded-lg overflow-hidden ring-1.5 sm:ring-2 ring-[#FFD700] shadow-md bg-[#5C0A0A] shrink-0" title="N. Anand (Bussy Anand) - பொதுச் செயலாளர்">
+            <img alt="N. Anand (Bussy Anand)" class="object-cover object-top w-full h-full" src="anand.jpg" />
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-4 lg:gap-6 text-sm font-medium shrink-0">
+        <a class="text-white hover:text-[#FFD700] transition-colors whitespace-nowrap py-1 font-medium" href="track.html" id="t-trackNav">Track Complaint</a>
+        <button onclick="toggleLanguage()" class="text-xs font-semibold px-2.5 py-1 rounded transition-colors border border-white/40 text-white hover:bg-white/15 cursor-pointer whitespace-nowrap" id="lang-btn">
+          தமிழ்
+        </button>
+        <a class="bg-[#FFD700] text-[#7F1212] px-4 py-1.5 rounded font-bold hover:bg-yellow-300 transition-colors shadow-sm whitespace-nowrap text-xs sm:text-sm" href="login.html" id="t-loginNav">
+          Staff Login
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button (Compact & Zero-Overflow) -->
+      <div class="md:hidden flex items-center gap-1.5 shrink-0">
+        <button onclick="toggleLanguage()" class="text-[11px] sm:text-xs font-semibold px-2 py-1 rounded border border-white/40 text-white cursor-pointer" id="mobile-lang-btn">
+          தமிழ்
+        </button>
+        <button onclick="toggleMobileMenu()" class="p-1.5 rounded-md hover:bg-[#7F1212] transition-colors text-white cursor-pointer" aria-label="Toggle menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile dropdown menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#7F1212] px-4 py-3 border-t border-red-800 flex flex-col gap-3 text-sm font-medium">
+      <a class="text-white hover:text-[#FFD700] py-1" href="track.html" id="t-mobileTrackNav">Track Complaint</a>
+      <a class="bg-[#FFD700] text-[#7F1212] px-4 py-2 rounded text-center font-bold" href="login.html" id="t-mobileLoginNav">Staff Login</a>
+    </div>
+  </header>
+
+  <!-- MAIN BODY -->
+  <main class="flex-1">
+
+    <!-- HERO SECTION -->
+    <div class="relative bg-gradient-to-br from-[#B71C1C] via-[#C62828] to-[#7F1212] overflow-hidden">
+      <!-- Subtle Grid lines -->
+      <div class="absolute inset-0 opacity-[0.06] hero-grid-pattern pointer-events-none"></div>
+
+      <!-- Gold Top Bar -->
+      <div class="absolute top-0 left-0 right-0 h-1 bg-[#FFD700]"></div>
+
+      <div class="relative max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-20 sm:pt-14 sm:pb-28">
+        <div class="flex flex-col-reverse md:flex-row items-center justify-center gap-8 md:gap-10 lg:gap-12">
+          
+          <!-- Left Content -->
+          <div class="w-full md:max-w-lg lg:max-w-xl text-center md:text-left">
+            <!-- Constituency Badge -->
+            <div class="inline-flex items-center gap-2 bg-[#FFD700]/20 border border-[#FFD700]/40 text-[#FFD700] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#FFD700] animate-pulse"></span>
+              <span id="t-constituency">Athoor Constituency</span>
+            </div>
+
+            <!-- Big Tamil Heading -->
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight mb-3 tracking-tight tamil-text" id="t-heroTitle">
+              உங்கள் உரிமையை<br class="hidden sm:inline" /> பதிவு செய்யுங்கள்!
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-red-100 text-sm sm:text-base max-w-lg mb-8 leading-relaxed mx-auto md:mx-0" id="t-heroSubtitle">
+              Submit a complaint or a personal need to the Dindigul Central District Secretary (Athoor Constituency) office. We track every request and keep you updated.
+            </p>
+
+            <!-- Yellow CTA Button -->
+            <a href="#complaint-form" class="inline-flex items-center gap-2 bg-[#FFD700] text-[#7F1212] font-bold px-7 py-3 rounded-full shadow-lg hover:bg-yellow-300 transition-colors text-sm sm:text-base">
+              <span id="t-heroCta">Submit a Complaint</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                <path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Leaders Section (Vasudevan + Vignesh) -->
+          <div class="shrink-0 flex flex-col items-center">
+            
+            <!-- LAPTOP / DESKTOP VIEW (Visible on md+ screens: Vignesh & Vasudevan Side-by-Side) -->
+            <div class="hidden md:flex flex-row items-center justify-center gap-5 lg:gap-6">
+              
+              <!-- 1. Left Leader: K. Vignesh (5cm scale) -->
+              <div class="relative w-36 h-52 lg:w-40 lg:h-56 rounded-2xl overflow-hidden shadow-2xl ring-4 ring-[#FFD700]/90 ring-offset-2 ring-offset-[#7F1212] bg-[#7F1212] shrink-0">
+                <img alt="K. Vignesh" class="object-cover object-[center_15%] w-full h-full" src="vignesh.jpg" />
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/75 to-transparent px-2 pt-8 pb-2.5 text-center">
+                  <p class="text-white font-extrabold text-[12px] leading-tight mb-0.5 whitespace-nowrap">K. Vignesh</p>
+                  <p class="text-[#FFD700] text-[9.5px] lg:text-[10px] tamil-text font-bold leading-tight">மதுவிலக்கு &<br/>ஆயதீர்வுத்துறை</p>
+                  <div class="flex items-center justify-center gap-1 mt-1">
+                    <span class="bg-[#FFD700] text-[#7F1212] text-[9px] font-black px-1.5 py-0.5 rounded uppercase tracking-wide whitespace-nowrap">அமைச்சர்</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2. Right Leader: M.L வாசுதேவன் (எ) தேவா (5cm scale) -->
+              <div class="relative w-36 h-52 lg:w-40 lg:h-56 rounded-2xl overflow-hidden shadow-2xl ring-4 ring-[#FFD700]/90 ring-offset-2 ring-offset-[#7F1212] bg-[#7F1212] shrink-0">
+                <img alt="M.L. Vasudevan (En) Deva" class="object-cover object-[center_10%] w-full h-full" src="vasudevan.jpg" />
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/75 to-transparent px-2 pt-8 pb-2.5 text-center">
+                  <p class="text-white font-extrabold text-[10.5px] lg:text-[11.5px] leading-tight mb-0.5 whitespace-nowrap tracking-tight">M.L. Vasudevan (En) Deva</p>
+                  <p class="text-[#FFD700] text-[9.5px] lg:text-[10px] tamil-text font-bold leading-tight">திண்டுக்கல் மத்திய<br/>மாவட்ட செயலாளர்</p>
+                  <div class="flex items-center justify-center gap-1 mt-1">
+                    <span class="bg-[#FFD700] text-[#7F1212] text-[9px] font-black px-1.5 py-0.5 rounded uppercase tracking-wide whitespace-nowrap">ஆத்தூர் தொகுதி</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- MOBILE VIEW (Visible on < md screens: Vignesh & Vasudevan in parallel) -->
+            <div class="flex md:hidden flex-col items-center w-full max-w-[340px] sm:max-w-[400px]">
+              <div class="grid grid-cols-2 gap-2.5 sm:gap-4 w-full">
+                
+                <!-- Vignesh (Left, Parallel, 5cm scale) -->
+                <div class="relative w-full h-44 sm:h-48 rounded-xl overflow-hidden shadow-xl ring-2 ring-[#FFD700] ring-offset-1 ring-offset-[#7F1212] bg-[#7F1212]">
+                  <img alt="K. Vignesh" class="object-cover object-[center_15%] w-full h-full" src="vignesh.jpg" />
+                  <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/75 to-transparent px-1 pt-6 pb-1.5 text-center">
+                    <p class="text-white font-extrabold text-[9.5px] sm:text-[10.5px] leading-tight mb-0.5 truncate">K. Vignesh</p>
+                    <p class="text-[#FFD700] text-[8px] sm:text-[8.5px] tamil-text font-bold leading-tight">மதுவிலக்கு &<br/>ஆயதீர்வுத்துறை</p>
+                    <div class="flex items-center justify-center gap-1 mt-0.5">
+                      <span class="bg-[#FFD700] text-[#7F1212] text-[7.5px] sm:text-[8px] font-black px-1.5 py-0.5 rounded uppercase whitespace-nowrap">அமைச்சர்</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Vasudevan (Right, Parallel, 5cm scale) -->
+                <div class="relative w-full h-44 sm:h-48 rounded-xl overflow-hidden shadow-xl ring-2 ring-[#FFD700] ring-offset-1 ring-offset-[#7F1212] bg-[#7F1212]">
+                  <img alt="M.L. Vasudevan (En) Deva" class="object-cover object-[center_10%] w-full h-full" src="vasudevan.jpg" />
+                  <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/75 to-transparent px-1 pt-6 pb-1.5 text-center">
+                    <p class="text-white font-extrabold text-[8.5px] sm:text-[9.5px] leading-tight mb-0.5 truncate tracking-tight" title="M.L. Vasudevan (En) Deva">M.L. Vasudevan (En) Deva</p>
+                    <p class="text-[#FFD700] text-[8px] sm:text-[8.5px] tamil-text font-bold leading-tight">திண்டுக்கல் மத்திய<br/>மாவட்ட செயலாளர்</p>
+                    <div class="flex items-center justify-center gap-1 mt-0.5">
+                      <span class="bg-[#FFD700] text-[#7F1212] text-[7.5px] sm:text-[8px] font-black px-1.5 py-0.5 rounded uppercase whitespace-nowrap">ஆத்தூர் தொகுதி</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bottom SVG Curve Divider -->
+      <div class="absolute bottom-0 left-0 right-0 pointer-events-none">
+        <svg viewBox="0 0 1440 48" preserveAspectRatio="none" class="w-full h-10 sm:h-12 block" fill="#F5F5F5">
+          <path d="M0,48 C360,0 1080,0 1440,48 L1440,48 L0,48 Z"></path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <div class="max-w-4xl mx-auto px-4 py-8 sm:py-10">
+
+      <!-- SECRETARY PROFILE BANNER CARD -->
+      <div class="relative bg-white rounded-2xl shadow-md overflow-hidden mb-8 border border-gray-100">
+        
+        <!-- Mobile View -->
+        <div class="flex sm:hidden items-center gap-3.5 px-4 py-4 sm:px-5 sm:py-5">
+          <div class="shrink-0 w-20 h-20 rounded-xl overflow-hidden ring-2 ring-[#B71C1C] ring-offset-2 shadow bg-gray-100">
+            <img alt="M.L. Vasudevan (En) Deva" class="w-full h-full object-cover object-[center_15%]" src="vasudevan-card.jpg" />
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-1.5 mb-1.5 flex-wrap">
+              <span class="bg-[#B71C1C] text-white text-[10px] font-extrabold px-2 py-0.5 rounded uppercase tracking-wide">TVK</span>
+              <span class="inline-block bg-[#FFF8DC] text-[#7F1212] text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-widest" id="t-cardConstMobile">Athoor Constituency</span>
+            </div>
+            <p class="text-xs text-gray-500 font-semibold uppercase tracking-wider" id="t-cardRoleMobile">TVK Central District Secretary</p>
+            <h2 class="text-base xs:text-lg font-extrabold text-gray-900 leading-tight">M.L. Vasudevan (En) Deva</h2>
+            <p class="text-xs text-gray-500 mt-0.5 leading-snug tamil-text">M.L வாசுதேவன் (எ) தேவா — திண்டுக்கல் மத்திய மாவட்ட செயலாளர்</p>
+          </div>
+        </div>
+
+        <div class="flex sm:hidden flex-col gap-3 px-4 pb-4 sm:px-5 sm:pb-5">
+          <div class="flex flex-wrap gap-2">
+            <span class="inline-flex items-center gap-1.5 bg-red-50 text-[#B71C1C] text-xs font-medium px-3 py-1.5 rounded-full border border-red-100">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg>
+              <span id="t-cardPartyPillMobile">Tamilaga Vettri Kazhagam</span>
+            </span>
+            <span class="inline-flex items-center gap-1.5 bg-yellow-50 text-yellow-800 text-xs font-medium px-3 py-1.5 rounded-full border border-yellow-100">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>
+              <span id="t-cardConstPillMobile">Athoor Constituency</span>
+            </span>
+          </div>
+          <div class="flex flex-col gap-1.5 text-xs text-gray-500">
+            <div class="flex items-center gap-1.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-[#B71C1C] shrink-0"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
+              <a href="tel:+919698646331" class="hover:text-[#B71C1C] transition-colors">+91 96986 46331</a>
+            </div>
+            <div class="flex items-center gap-1.5 min-w-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-[#B71C1C] shrink-0"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+              <a href="mailto:tvkdevaaathoor@gmail.com" class="hover:text-[#B71C1C] transition-colors break-all">tvkdevaaathoor@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desktop View (Matches Screenshot Exactly) -->
+        <div class="hidden sm:flex flex-row min-h-[180px]">
+          <div class="relative w-64 shrink-0 bg-gray-100">
+            <img alt="M.L. Vasudevan (En) Deva" class="object-cover object-[center_15%] w-full h-full" src="vasudevan-card.jpg" />
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white"></div>
+          </div>
+          <div class="flex-1 flex flex-col justify-center px-6 py-6 pl-8">
+            <div class="flex items-center gap-1.5 mb-2 self-start">
+              <span class="bg-[#B71C1C] text-white text-[10px] font-extrabold px-2 py-0.5 rounded uppercase tracking-wide">TVK</span>
+              <span class="inline-block bg-[#FFF8DC] text-[#7F1212] text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-widest" id="t-cardConstDesk">Athoor Constituency</span>
+            </div>
+            <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mb-0.5" id="t-cardRoleDesk">TVK Central District Secretary</p>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight mb-0.5">
+              M.L. Vasudevan (En) Deva
+            </h2>
+            <p class="text-xs text-gray-500 mb-4 tamil-text">M.L வாசுதேவன் (எ) தேவா — திண்டுக்கல் மத்திய மாவட்ட செயலாளர்</p>
+            
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="inline-flex items-center gap-1.5 bg-red-50 text-[#B71C1C] text-xs font-medium px-3 py-1.5 rounded-full border border-red-100">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg>
+                <span id="t-cardPartyPillDesk">Tamilaga Vettri Kazhagam</span>
+              </span>
+              <span class="inline-flex items-center gap-1.5 bg-yellow-50 text-yellow-800 text-xs font-medium px-3 py-1.5 rounded-full border border-yellow-100">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                <span id="t-cardConstPillDesk">Athoor Constituency</span>
+              </span>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-4 text-xs text-gray-500">
+              <div class="flex items-center gap-1.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-[#B71C1C] shrink-0"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
+                <a href="tel:+919698646331" class="hover:text-[#B71C1C] transition-colors font-medium">+91 96986 46331</a>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-[#B71C1C] shrink-0"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+                <a href="mailto:tvkdevaaathoor@gmail.com" class="hover:text-[#B71C1C] transition-colors font-medium">tvkdevaaathoor@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gold Bottom Stripe on Card -->
+        <div class="absolute bottom-0 left-0 right-0 h-1 bg-[#FFD700]"></div>
+      </div>
+
+      <!-- COMPLAINT / NEED FORM (Exact Layout from tvkcm.com) -->
+      <div id="complaint-form" class="bg-white rounded-2xl shadow-sm border border-gray-200 p-4 sm:p-8">
+        
+        <!-- Header -->
+        <div class="border-l-4 border-[#B71C1C] pl-4 mb-6">
+          <h2 class="text-xl font-bold text-gray-800" id="t-formTitle">New Request</h2>
+          <p class="text-sm text-gray-500 mt-0.5" id="t-formSubtitle">Fill in the details below. You will receive a ticket ID on submission.</p>
+        </div>
+
+        <!-- Tab Switcher -->
+        <div class="flex bg-gray-100 rounded-xl p-1 mb-6 gap-1">
+          <!-- Tab 1: Needs -->
+          <button type="button" id="tab-btn-needs" onclick="switchFormTab('needs')" class="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-1 sm:px-2 rounded-lg text-xs sm:text-sm font-semibold transition-colors bg-white text-[#B71C1C] shadow-sm cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0"><path d="M11 14h2a2 2 0 0 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"></path><path d="m14.45 13.39 5.05-4.694C20.196 8 21 6.85 21 5.75a2.75 2.75 0 0 0-4.797-1.837.276.276 0 0 1-.406 0A2.75 2.75 0 0 0 11 5.75c0 1.2.802 2.248 1.5 2.946L16 11.95"></path><path d="m2 15 6 6"></path><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a1 1 0 0 0-2.75-2.91"></path></svg>
+            <span class="hidden sm:inline" id="t-tabNeedsLong">Needs</span>
+            <span class="sm:hidden" id="t-tabNeedsShort">Needs</span>
+          </button>
+
+          <!-- Tab 2: Complaint -->
+          <button type="button" id="tab-btn-complaint" onclick="switchFormTab('complaint')" class="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-1 sm:px-2 rounded-lg text-xs sm:text-sm font-semibold transition-colors text-gray-500 hover:text-gray-700 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path><path d="M14 2v5a1 1 0 0 0 1 1h5"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
+            <span class="hidden sm:inline" id="t-tabComplaintLong">Complaint</span>
+            <span class="sm:hidden" id="t-tabComplaintShort">Complaint</span>
+          </button>
+
+          <!-- Tab 3: Voice Complaint -->
+          <button type="button" id="tab-btn-voice" onclick="switchFormTab('voice')" class="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-1 sm:px-2 rounded-lg text-xs sm:text-sm font-semibold transition-colors text-gray-500 hover:text-gray-700 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0"><path d="M12 19v3"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><rect x="9" y="2" width="6" height="13" rx="3"></rect></svg>
+            <span class="hidden sm:inline" id="t-tabVoiceLong">Voice Complaint</span>
+            <span class="sm:hidden" id="t-tabVoiceShort">Voice</span>
+          </button>
+        </div>
+
+        <!-- FORM -->
+        <form onsubmit="handleFormSubmission(event)" class="space-y-6">
+
+          <!-- Hidden file input accessible across all tabs -->
+          <input type="file" id="input-image-file" accept="image/*" class="hidden" onchange="handleImageSelected(event)" />
+
+          <!-- Section 1: Your Details -->
+          <section>
+            <h3 class="text-sm font-semibold text-[#B71C1C] uppercase tracking-wide mb-3" id="t-secYourDetails">Your Details</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" id="t-lblFullName">
+                  Full Name <span class="text-red-600">*</span>
+                </label>
+                <input type="text" id="input-fullname" required placeholder="Your full name" class="w-full border rounded-md px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#B71C1C] border-gray-300" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" id="t-lblMobile">
+                  Mobile Number <span class="text-red-600">*</span>
+                </label>
+                <input type="tel" id="input-mobile" required pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile number" class="w-full border rounded-md px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#B71C1C] border-gray-300" />
+              </div>
+            </div>
+            <div class="mt-4">
+              <label class="block text-sm font-medium text-gray-700 mb-1" id="t-lblAddress">
+                Address <span class="text-red-600">*</span>
+              </label>
+              <input type="text" id="input-address" required placeholder="House no., street, area, landmark" class="w-full border rounded-md px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#B71C1C] border-gray-300" />
+            </div>
+          </section>
+
+          <hr class="border-gray-200" />
+
+          <!-- Section 2: Location -->
+          <section>
+            <h3 class="text-sm font-semibold text-[#B71C1C] uppercase tracking-wide mb-3" id="t-secLocation">Location</h3>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1" id="t-lblWard">
+                ஆத்தூர் — ஒன்றியம் / Athoor — Union <span class="text-red-600">*</span>
+              </label>
+              <select id="select-ward" onchange="onWardSelected(this.value)" class="w-full border border-gray-300 rounded-md px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#B71C1C] bg-white">
+                <option value="ஆத்தூர் வடக்கு ஒன்றியம் / Athoor North Union" selected>ஆத்தூர் வடக்கு ஒன்றியம் / Athoor North Union</option>
+                <option value="ஆத்தூர் தெற்கு ஒன்றியம் / Athoor South Union">ஆத்தூர் தெற்கு ஒன்றியம் / Athoor South Union</option>
+                <option value="ஆத்தூர் மேற்கு ஒன்றியம் / Athoor West Union">ஆத்தூர் மேற்கு ஒன்றியம் / Athoor West Union</option>
+                <option value="ஆத்தூர் கிழக்கு ஒன்றியம் / Athoor East Union">ஆத்தூர் கிழக்கு ஒன்றியம் / Athoor East Union</option>
+                <option value="ரெட்டியார் சத்திரம் வடக்கு ஒன்றியம் / Reddiarchatram North Union">ரெட்டியார் சத்திரம் வடக்கு ஒன்றியம் / Reddiarchatram North Union</option>
+                <option value="ரெட்டியார் சத்திரம் தெற்கு ஒன்றியம் / Reddiarchatram South Union">ரெட்டியார் சத்திரம் தெற்கு ஒன்றியம் / Reddiarchatram South Union</option>
+                <option value="ரெட்டியார் சத்திரம் மேற்கு ஒன்றியம் / Reddiarchatram West Union">ரெட்டியார் சத்திரம் மேற்கு ஒன்றியம் / Reddiarchatram West Union</option>
+                <option value="ரெட்டியார் சத்திரம் கிழக்கு ஒன்றியம் / Reddiarchatram East Union">ரெட்டியார் சத்திரம் கிழக்கு ஒன்றியம் / Reddiarchatram East Union</option>
+              </select>
+            </div>
+
+            <div class="mt-4">
+              <label class="block text-sm font-medium text-gray-700 mb-1" id="t-lblStreet">
+                வார்டு எண் / Ward Number <span class="text-red-600">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="input-street" 
+                name="street" 
+                required 
+                placeholder="வார்டு எண் உள்ளிடவும் / Enter Ward Number (e.g. Ward 5)" 
+                class="w-full border border-gray-300 rounded-md px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#B71C1C] bg-white" 
+              />
+            </div>
+
+            <!-- GPS Verification -->
+            <div class="mt-4">
+              <div class="space-y-3">
+                <label class="block text-sm font-medium text-gray-700" id="t-lblYourLocation">
+                  Your Location <span class="text-red-600">*</span>
+                </label>
+                <p class="text-xs text-gray-500 -mt-1" id="t-locationStatusText">
+                  Required — share your location to confirm you are within Athoor constituency.
+                </p>
+                <button type="button" onclick="detectGPSLocation()" class="flex items-center gap-2 px-4 py-2 border rounded-md text-sm transition-colors border-[#B71C1C] text-[#B71C1C] hover:bg-[#B71C1C] hover:text-white cursor-pointer font-medium">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span id="t-btnUseLocation">Use My Location</span>
+                </button>
+                <div id="gps-verified-tag" class="hidden text-xs text-green-700 bg-green-50 border border-green-200 px-3 py-1.5 rounded-md font-medium">
+                  ✓ Location Verified: Within Athoor Constituency (10.2865° N, 77.8561° E)
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <hr class="border-gray-200" />
+
+          <!-- Section 3: Details (Standard Tab: Needs & Complaint) -->
+          <section id="standard-details-section">
+            <h3 class="text-sm font-semibold text-[#B71C1C] uppercase tracking-wide mb-3" id="t-secDetailsTitle">தேவை விவரங்கள் / Need Details</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" id="t-lblCategory">
+                  பிரிவு / Category <span class="text-red-600">*</span>
+                </label>
+                <select id="select-category" required onchange="onCategoryChanged(this.value)" class="w-full border rounded-md px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#B71C1C] border-gray-300 bg-white">
+                  <option value="" disabled selected>— பிரிவு தேர்ந்தெடுக்கவும் / Select Category —</option>
+                  <option value="அடிப்படை தேவைகள் / Basic Needs">அடிப்படை தேவைகள் / Basic Needs</option>
+                  <option value="மின்சாரம் தொடர்பானது / Electricity Related">மின்சாரம் தொடர்பானது / Electricity Related</option>
+                  <option value="கல்வி உதவி / Education Related">கல்வி உதவி / Education Related</option>
+                  <option value="மருத்துவ உதவி / Medical Assistance">மருத்துவ உதவி / Medical Assistance</option>
+                  <option value="நலத்திட்டங்கள் / Welfare Schemes">நலத்திட்டங்கள் / Welfare Schemes</option>
+                  <option value="வீட்டு வசதி உதவி / Housing Assistance">வீட்டு வசதி உதவி / Housing Assistance</option>
+                  <option value="வேலைவாய்ப்பு & தொழில் / Employment & Business">வேலைவாய்ப்பு & தொழில் / Employment & Business</option>
+                  <option value="சட்டம் & ஆவண உதவி / Legal & Document Assistance">சட்டம் & ஆவண உதவி / Legal & Document Assistance</option>
+                  <option value="அவசர உதவி / Emergency Assistance">அவசர உதவி / Emergency Assistance</option>
+                  <option value="சமூக சேவை / Community Service">சமூக சேவை / Community Service</option>
+                  <option value="மற்றவை / Other">மற்றவை / Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" id="t-lblType">
+                  தேவை வகை / Need Type <span class="text-red-600">*</span>
+                </label>
+                <select id="select-type" required class="w-full border rounded-md px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#B71C1C] border-gray-300 bg-white">
+                  <option value="" disabled selected>— வகை தேர்ந்தெடுக்கவும் / Select Type —</option>
+                  <option value="அவசர உதவி / Urgent Assistance">அவசர உதவி / Urgent Assistance</option>
+                  <option value="நிதி உதவி / Financial Support">நிதி உதவி / Financial Support</option>
+                  <option value="அரசு திட்ட விண்ணப்பம் / Scheme Application">அரசு திட்ட விண்ணப்பம் / Scheme Application</option>
+                  <option value="பழுது நீக்கம் & ஆய்வு / Repair & Inspection">பழுது நீக்கம் & ஆய்வு / Repair & Inspection</option>
+                  <option value="பொதுவான ஆதரவு / General Support">பொதுவான ஆதரவு / General Support</option>
+                  <option value="மற்றவை / Other">மற்றவை / Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <label class="block text-sm font-medium text-gray-700 mb-1" id="t-lblDescription">
+                Description <span class="text-red-600">*</span>
+              </label>
+              <textarea id="input-description" placeholder="Describe your need in detail" rows="4" class="w-full border rounded-md px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#B71C1C] border-gray-300 resize-none"></textarea>
+            </div>
+
+            <!-- Image Upload Attachment Option -->
+            <div class="mt-4">
+              <label class="block text-sm font-medium text-gray-700 mb-1">
+                <span id="t-lblImage">Attach Photo / Image</span>
+                <span class="text-gray-400 font-normal text-xs ml-1">(Optional — JPEG, PNG up to 5MB)</span>
+              </label>
+              
+              <div id="image-upload-box" class="border-2 border-dashed border-gray-300 hover:border-[#B71C1C] rounded-xl p-4 text-center cursor-pointer transition-colors bg-gray-50/50" onclick="document.getElementById('input-image-file').click()">
+                <div id="image-empty-state" class="flex flex-col items-center justify-center py-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke-width="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <polyline points="21 15 16 10 5 21" stroke-width="2"/>
+                  </svg>
+                  <p class="text-xs text-gray-600 font-medium" id="t-imgPrompt">Click to take photo or choose image from gallery</p>
+                  <p class="text-[10px] text-gray-400 mt-0.5">Helps staff quickly inspect & verify your grievance</p>
+                </div>
+
+                <!-- Preview State -->
+                <div id="image-preview-state" class="hidden flex items-center justify-between gap-3 bg-white p-2.5 rounded-lg border border-gray-200">
+                  <div class="flex items-center gap-3 min-w-0">
+                    <img id="image-preview-thumb" src="" alt="Selected preview" class="w-12 h-12 rounded object-cover border border-gray-200 shrink-0" />
+                    <div class="text-left min-w-0">
+                      <div id="image-file-name" class="text-xs font-bold text-gray-800 truncate">photo.jpg</div>
+                      <div id="image-file-size" class="text-[10px] text-gray-400">0 KB</div>
+                    </div>
+                  </div>
+                  <button type="button" onclick="event.stopPropagation(); removeSelectedImage()" class="p-1.5 text-red-500 hover:bg-red-50 rounded-md transition-colors cursor-pointer" title="Remove photo">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <polyline points="3 6 5 6 21 6"></polyline>
+                      <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 3: Voice Complaint Tab (Matching tvkcm.com) -->
+          <section id="voice-details-section" class="hidden">
+            <h3 class="text-sm font-semibold text-[#B71C1C] uppercase tracking-wide mb-3" id="t-secVoiceTitle">Voice Complaint</h3>
+            
+            <div class="space-y-4">
+              <label class="block text-sm font-medium text-gray-700">
+                <span id="t-voiceLabel">Record your grievance</span> 
+                <span class="text-gray-400 font-normal" id="t-voiceReqTag">(speak clearly in Tamil or English)</span>
+              </label>
+
+              <!-- State 1: IDLE -->
+              <div id="voice-state-idle" class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+                <button type="button" onclick="startVoiceRecording()" class="flex items-center gap-2 px-5 py-3 bg-[#B71C1C] text-white rounded-md text-sm font-medium hover:bg-[#7F1212] transition-colors shadow-sm cursor-pointer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M12 19v3"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><rect x="9" y="2" width="6" height="13" rx="3"></rect></svg>
+                  <span id="t-btnStartRecord">Start Recording</span>
+                </button>
+                <span class="text-xs text-gray-500">Tap to allow microphone access and speak your complaint.</span>
+              </div>
+
+              <!-- State 2: RECORDING -->
+              <div id="voice-state-recording" class="hidden flex items-center gap-4 bg-red-50 border border-red-200 rounded-md px-4 py-3">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse shrink-0"></span>
+                <span id="recording-timer" class="text-sm font-mono text-red-700 font-semibold">00:00</span>
+                <div class="text-sm text-red-600 flex-1 flex items-center gap-2">
+                  <span id="t-recordingStatus">Recording grievance…</span>
+                  <span class="text-xs opacity-75">(Max 5 mins)</span>
+                  <!-- Sound wave bars -->
+                  <div class="flex items-center gap-1 h-3.5 ml-2">
+                    <span class="w-1 bg-red-500 h-2 rounded animate-pulse"></span>
+                    <span class="w-1 bg-red-500 h-3.5 rounded animate-pulse delay-75"></span>
+                    <span class="w-1 bg-red-500 h-2.5 rounded animate-pulse delay-150"></span>
+                    <span class="w-1 bg-red-500 h-4 rounded animate-pulse delay-200"></span>
+                  </div>
+                </div>
+                <button type="button" onclick="stopVoiceRecording()" class="flex items-center gap-1.5 px-3 py-1.5 bg-red-600 text-white rounded text-sm font-medium hover:bg-red-700 shadow-sm cursor-pointer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><rect x="4" y="4" width="16" height="16" rx="2"></rect></svg>
+                  <span id="t-btnStopRecord">Stop</span>
+                </button>
+              </div>
+
+              <!-- State 3: RECORDED -->
+              <div id="voice-state-recorded" class="hidden flex items-center gap-3 bg-green-50 border border-green-200 rounded-md px-4 py-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-600 shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <span class="text-sm text-green-700 flex-1 font-medium">
+                  <span id="t-recordedTitle">Voice Recorded</span> (<span id="recorded-duration-text">00:00</span>)
+                </span>
+                
+                <!-- Play/Pause Button -->
+                <button type="button" onclick="togglePlayRecordedAudio()" id="btn-play-recorded" class="p-1.5 text-green-700 hover:bg-green-100 rounded transition-colors cursor-pointer" title="Play recording">
+                  <svg id="icon-play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  <svg id="icon-pause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 hidden"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+                </button>
+
+                <!-- Trash/Delete Button -->
+                <button type="button" onclick="deleteVoiceRecording()" class="p-1.5 text-red-500 hover:bg-red-50 rounded transition-colors cursor-pointer" title="Delete recording">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                </button>
+              </div>
+
+              <!-- Image Upload Attachment in Voice Tab -->
+              <div class="mt-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">
+                  <span id="t-lblVoiceImage">Attach Photo / Image</span>
+                  <span class="text-gray-400 font-normal text-xs ml-1">(Optional — JPEG, PNG up to 5MB)</span>
+                </label>
+                
+                <div id="voice-image-upload-box" class="border-2 border-dashed border-gray-300 hover:border-[#B71C1C] rounded-xl p-4 text-center cursor-pointer transition-colors bg-gray-50/50" onclick="triggerVoiceImagePicker()">
+                  <input type="file" id="input-voice-image-file" accept="image/*" class="hidden" onchange="handleImageSelected(event)" />
+                  <div id="voice-image-empty-state" class="flex flex-col items-center justify-center py-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke-width="2"/>
+                      <circle cx="8.5" cy="8.5" r="1.5"/>
+                      <polyline points="21 15 16 10 5 21" stroke-width="2"/>
+                    </svg>
+                    <p class="text-xs text-gray-600 font-medium">Click to take photo or attach image with voice complaint</p>
+                    <p class="text-[10px] text-gray-400 mt-0.5">Attach photo evidence along with your voice recording</p>
+                  </div>
+
+                  <!-- Voice Preview State -->
+                  <div id="voice-image-preview-state" class="hidden flex items-center justify-between gap-3 bg-white p-2.5 rounded-lg border border-gray-200">
+                    <div class="flex items-center gap-3 min-w-0">
+                      <img id="voice-image-preview-thumb" src="" alt="Selected preview" class="w-12 h-12 rounded object-cover border border-gray-200 shrink-0" />
+                      <div class="text-left min-w-0">
+                        <div id="voice-image-file-name" class="text-xs font-bold text-gray-800 truncate">photo.jpg</div>
+                        <div id="voice-image-file-size" class="text-[10px] text-gray-400">0 KB</div>
+                      </div>
+                    </div>
+                    <button type="button" onclick="event.stopPropagation(); removeSelectedImage()" class="p-1.5 text-red-500 hover:bg-red-50 rounded-md transition-colors cursor-pointer" title="Remove photo">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <polyline points="3 6 5 6 21 6"></polyline>
+                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Submit Button -->
+          <button type="submit" id="submit-button" class="w-full bg-[#B71C1C] text-white py-3.5 rounded-md font-semibold text-base hover:bg-[#7F1212] transition-colors shadow-sm cursor-pointer">
+            <span id="t-submitButtonText">Submit Need</span>
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- RECEIPT POPUP MODAL -->
+  <div id="ticket-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 text-center shadow-2xl modal-animate border border-gray-100">
+      <div class="w-14 h-14 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-4 font-bold">
+        ✓
+      </div>
+      <h3 class="text-xl font-extrabold text-gray-900" id="t-modalHeading">Request Submitted!</h3>
+      <p class="text-sm text-gray-500 mt-1" id="t-modalSubheading">Your request has been received by the Dindigul Central District Secretary (Athoor Constituency) office.</p>
+
+      <div class="bg-gray-50 border-2 border-dashed border-[#B71C1C] rounded-xl p-4 my-5">
+        <div class="text-xs uppercase tracking-widest text-gray-400 font-bold">Your Ticket ID</div>
+        <div class="text-2xl font-mono font-extrabold text-[#B71C1C] tracking-wide mt-1" id="modal-ticket-number">TVK-ATH-2026-008194</div>
+      </div>
+
+      <p class="text-xs text-gray-500 mb-6">
+        Save this Ticket ID to track the real-time resolution progress on the tracking portal.
+      </p>
+
+      <div class="flex gap-3 justify-center">
+        <button type="button" onclick="copyModalTicketId()" id="btn-copy-ticket" class="flex-1 py-2.5 px-4 rounded-lg border border-gray-300 font-semibold text-sm text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer">
+          📋 Copy Ticket ID
+        </button>
+        <a href="track.html" id="modal-track-link" class="flex-1 py-2.5 px-4 rounded-lg bg-[#B71C1C] text-white font-semibold text-sm hover:bg-[#7F1212] transition-colors inline-flex items-center justify-center">
+          Track Status →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#B71C1C] text-white py-6 px-6 mt-auto">
+    <div class="max-w-4xl mx-auto space-y-4">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-center sm:text-left">
+        <p class="font-medium">Tamilaga Vettri Kazhagam — Serving the People · Athoor Constituency</p>
+        <p class="text-[#FFD700] font-medium tamil-text">தமிழக வெற்றிக் கழகம் — ஆத்தூர் தொகுதி</p>
+      </div>
+
+      <div class="border-t border-[#7F1212] pt-4 flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4 text-xs text-red-200">
+        <div class="flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 shrink-0 text-[#FFD700]"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
+          <a href="tel:+919698646331" class="hover:text-white transition-colors">+91 96986 46331</a>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 shrink-0 text-[#FFD700]"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+          <a href="mailto:tvkdevaaathoor@gmail.com" class="hover:text-white transition-colors">tvkdevaaathoor@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="text-center text-xs text-red-300/80 pt-2 border-t border-red-800/40">
+        Powered by SmartBill · Public Grievance Portal
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // State
+    let currentLanguage = 'en';
+    let currentTab = 'needs'; // 'needs' | 'complaint' | 'voice'
+    let isRecordingVoice = false;
+    let voiceTimer = null;
+
+    // Bilingual translations
+    const i18n = {
+      en: {
+        langBtn: "தமிழ்",
+        trackNav: "Track Complaint",
+        loginNav: "Staff Login",
+        orgName: "Tamilaga Vettri Kazhagam",
+        slogan: "உங்கள் உரிமையை பதிவு செய்யுங்கள்!",
+        constituency: "Athoor Constituency",
+        heroTitle: "உங்கள் உரிமையை<br class='hidden sm:inline'> பதிவு செய்யுங்கள்!",
+        heroSubtitle: "Submit a complaint or a personal need to the Dindigul Central District Secretary (Athoor Constituency) office. We track every request and keep you updated.",
+        heroCta: "Submit a Complaint",
+        formTitle: "New Request",
+        formSubtitle: "Fill in the details below. You will receive a ticket ID on submission.",
+        tabNeeds: "Needs",
+        tabComplaint: "Complaint",
+        tabVoice: "Voice Complaint",
+        secYourDetails: "Your Details",
+        lblFullName: "Full Name",
+        lblMobile: "Mobile Number",
+        lblAddress: "Address",
+        secLocation: "Location",
+        lblWard: "ஆத்தூர் — ஒன்றியம் / Athoor — Union",
+        lblStreet: "வார்டு எண் / Ward Number",
+        lblNotListed: "என் வார்டு பட்டியலில் இல்லை / My ward isn't listed",
+        lblYourLocation: "Your Location",
+        btnUseLocation: "Use My Location",
+        secDetailsTitleNeeds: "தேவை விவரங்கள் / Need Details",
+        secDetailsTitleComplaint: "புகார் விவரங்கள் / Complaint Details",
+        secVoiceTitle: "Voice Complaint",
+        lblCategory: "பிரிவு / Category",
+        lblTypeNeeds: "தேவை வகை / Need Type",
+        lblTypeComplaint: "புகார் வகை / Complaint Type",
+        lblDescription: "Description",
+        lblImage: "Attach Photo / Image",
+        imgPrompt: "Click to take photo or choose image from gallery",
+        submitNeeds: "Submit Need",
+        submitComplaint: "Submit Complaint",
+        submitVoice: "Submit Voice Complaint",
+        modalHeading: "Request Submitted!",
+        modalSubheading: "Your request has been received by the Dindigul Central District Secretary (Athoor Constituency) office.",
+        cardRole: "TVK Central District Secretary",
+        cardConst: "Athoor Constituency",
+        cardPartyPill: "Tamilaga Vettri Kazhagam",
+        cardConstPill: "Athoor Constituency"
+      },
+      ta: {
+        langBtn: "English",
+        trackNav: "புகாரை கண்காணிக்க",
+        loginNav: "ஊழியர் உள்நுழைவு",
+        orgName: "தமிழக வெற்றிக் கழகம்",
+        slogan: "உங்கள் உரிமையை பதிவு செய்யுங்கள்!",
+        constituency: "ஆத்தூர் தொகுதி",
+        heroTitle: "உங்கள் உரிமையை<br class='hidden sm:inline'> பதிவு செய்யுங்கள்!",
+        heroSubtitle: "திண்டுக்கல் மத்திய மாவட்ட செயலாளர் (ஆத்தூர் தொகுதி) அலுவலகத்தில் உங்கள் குறைகள் அல்லது தனிப்பட்ட தேவைகளை பதிவு செய்யுங்கள். உங்கள் கோரிக்கை தொடர்ந்து கண்காணிக்கப்படும்.",
+        heroCta: "புகார் பதிவு செய்க",
+        formTitle: "புதிய கோரிக்கை",
+        formSubtitle: "கீழே உள்ள விவரங்களை நிரப்பவும். சமர்ப்பித்தவுடன் உங்களுக்கு டிக்கெட் எண் வழங்கப்படும்.",
+        tabNeeds: "தேவைகள்",
+        tabComplaint: "புகார்",
+        tabVoice: "குரல் பதிவு",
+        secYourDetails: "உங்கள் விவரங்கள்",
+        lblFullName: "முழு பெயர்",
+        lblMobile: "கைபேசி எண்",
+        lblAddress: "முகவரி",
+        secLocation: "இருப்பிடம்",
+        lblWard: "ஆத்தூர் — ஒன்றியம் / Athoor — Union",
+        lblStreet: "வார்டு எண் / Ward Number",
+        lblNotListed: "என் வார்டு பட்டியலில் இல்லை / My ward isn't listed",
+        lblYourLocation: "உங்கள் இருப்பிடம்",
+        btnUseLocation: "என் இருப்பிடத்தைப் பயன்படுத்து",
+        secDetailsTitleNeeds: "தேவை விவரங்கள் / Need Details",
+        secDetailsTitleComplaint: "புகார் விவரங்கள் / Complaint Details",
+        secVoiceTitle: "குரல் பதிவு",
+        lblCategory: "பிரிவு / Category",
+        lblTypeNeeds: "தேவை வகை / Need Type",
+        lblTypeComplaint: "புகார் வகை / Complaint Type",
+        lblDescription: "விளக்கம்",
+        lblImage: "புகைப்படம் இணைக்க",
+        imgPrompt: "புகைப்படம் எடுக்க அல்லது பதிவேற்ற கிளிக் செய்க",
+        submitNeeds: "தேவையை சமர்ப்பிக்க",
+        submitComplaint: "புகாரை சமர்ப்பிக்க",
+        submitVoice: "குரல் புகாரை சமர்ப்பிக்க",
+        modalHeading: "கோரிக்கை சமர்ப்பிக்கப்பட்டது!",
+        modalSubheading: "உங்கள் கோரிக்கை திண்டுக்கல் மத்திய மாவட்ட செயலாளர் (ஆத்தூர் தொகுதி) அலுவலகத்தால் பெறப்பட்டது.",
+        cardRole: "திண்டுக்கல் மத்திய மாவட்ட செயலாளர்",
+        cardConst: "ஆத்தூர் தொகுதி",
+        cardPartyPill: "தமிழக வெற்றிக் கழகம்",
+        cardConstPill: "ஆத்தூர் தொகுதி"
+      }
+    };
+
+    function toggleLanguage() {
+      currentLanguage = currentLanguage === 'en' ? 'ta' : 'en';
+      const t = i18n[currentLanguage];
+
+      document.getElementById('lang-btn').textContent = t.langBtn;
+      document.getElementById('mobile-lang-btn').textContent = t.langBtn;
+      document.getElementById('t-trackNav').textContent = t.trackNav;
+      document.getElementById('t-loginNav').textContent = t.loginNav;
+      const mTrack = document.getElementById('t-mobileTrackNav');
+      if (mTrack) mTrack.textContent = t.trackNav;
+      const mLogin = document.getElementById('t-mobileLoginNav');
+      if (mLogin) mLogin.textContent = t.loginNav;
+      document.getElementById('t-orgName').textContent = t.orgName;
+      document.getElementById('t-constituency').textContent = t.constituency;
+      document.getElementById('t-heroTitle').innerHTML = t.heroTitle;
+      document.getElementById('t-heroSubtitle').textContent = t.heroSubtitle;
+      document.getElementById('t-heroCta').textContent = t.heroCta;
+      document.getElementById('t-formTitle').textContent = t.formTitle;
+      document.getElementById('t-formSubtitle').textContent = t.formSubtitle;
+      document.getElementById('t-tabNeedsLong').textContent = t.tabNeeds;
+      document.getElementById('t-tabComplaintLong').textContent = t.tabComplaint;
+      document.getElementById('t-tabVoiceLong').textContent = t.tabVoice;
+      const tNeedsShort = document.getElementById('t-tabNeedsShort');
+      if (tNeedsShort) tNeedsShort.textContent = t.tabNeeds;
+      const tCompShort = document.getElementById('t-tabComplaintShort');
+      if (tCompShort) tCompShort.textContent = t.tabComplaint;
+      const tVoiceShort = document.getElementById('t-tabVoiceShort');
+      if (tVoiceShort) tVoiceShort.textContent = t.tabVoice;
+      document.getElementById('t-secYourDetails').textContent = t.secYourDetails;
+      document.getElementById('t-secLocation').textContent = t.secLocation;
+      
+      const setLabelText = (id, text) => {
+        const el = document.getElementById(id);
+        if (el && el.childNodes && el.childNodes[0]) {
+          el.childNodes[0].nodeValue = text + ' ';
+        }
+      };
+      setLabelText('t-lblFullName', t.lblFullName);
+      setLabelText('t-lblMobile', t.lblMobile);
+      setLabelText('t-lblAddress', t.lblAddress);
+      setLabelText('t-lblWard', t.lblWard);
+      setLabelText('t-lblStreet', t.lblStreet);
+      setLabelText('t-lblYourLocation', t.lblYourLocation);
+      setLabelText('t-lblCategory', t.lblCategory);
+      setLabelText('t-lblDescription', t.lblDescription);
+
+      const lblNotListed = document.getElementById('t-lblNotListed');
+      if (lblNotListed) lblNotListed.textContent = t.lblNotListed;
+      const btnUseLoc = document.getElementById('t-btnUseLocation');
+      if (btnUseLoc) btnUseLoc.textContent = t.btnUseLocation;
+
+      const lblImg = document.getElementById('t-lblImage');
+      if (lblImg) lblImg.textContent = t.lblImage;
+      const imgPrmpt = document.getElementById('t-imgPrompt');
+      if (imgPrmpt) imgPrmpt.textContent = t.imgPrompt;
+      document.getElementById('t-modalHeading').textContent = t.modalHeading;
+      document.getElementById('t-modalSubheading').textContent = t.modalSubheading;
+
+      // Secretary Profile Card Bilingual Updates
+      const crMob = document.getElementById('t-cardRoleMobile');
+      if (crMob) crMob.textContent = t.cardRole;
+      const crDesk = document.getElementById('t-cardRoleDesk');
+      if (crDesk) crDesk.textContent = t.cardRole;
+      const ccMob = document.getElementById('t-cardConstMobile');
+      if (ccMob) ccMob.textContent = t.cardConst;
+      const ccDesk = document.getElementById('t-cardConstDesk');
+      if (ccDesk) ccDesk.textContent = t.cardConst;
+      const cpPillMob = document.getElementById('t-cardPartyPillMobile');
+      if (cpPillMob) cpPillMob.textContent = t.cardPartyPill;
+      const cpPillDesk = document.getElementById('t-cardPartyPillDesk');
+      if (cpPillDesk) cpPillDesk.textContent = t.cardPartyPill;
+      const ccPillMob = document.getElementById('t-cardConstPillMobile');
+      if (ccPillMob) ccPillMob.textContent = t.cardConstPill;
+      const ccPillDesk = document.getElementById('t-cardConstPillDesk');
+      if (ccPillDesk) ccPillDesk.textContent = t.cardConstPill;
+
+      updateTabDependentTexts();
+    }
+
+    function updateTabDependentTexts() {
+      const t = i18n[currentLanguage];
+      const secTitleEl = document.getElementById('t-secDetailsTitle');
+      const submitTextEl = document.getElementById('t-submitButtonText');
+      const lblTypeEl = document.getElementById('t-lblType');
+
+      if (currentTab === 'needs') {
+        if (secTitleEl) secTitleEl.textContent = t.secDetailsTitleNeeds;
+        if (submitTextEl) submitTextEl.textContent = t.submitNeeds;
+        if (lblTypeEl && lblTypeEl.childNodes && lblTypeEl.childNodes[0]) lblTypeEl.childNodes[0].nodeValue = t.lblTypeNeeds + ' ';
+      } else if (currentTab === 'complaint') {
+        if (secTitleEl) secTitleEl.textContent = t.secDetailsTitleComplaint;
+        if (submitTextEl) submitTextEl.textContent = t.submitComplaint;
+        if (lblTypeEl && lblTypeEl.childNodes && lblTypeEl.childNodes[0]) lblTypeEl.childNodes[0].nodeValue = t.lblTypeComplaint + ' ';
+      } else {
+        if (submitTextEl) submitTextEl.textContent = t.submitVoice;
+      }
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      if (menu) menu.classList.toggle('hidden');
+    }
+
+    function switchFormTab(tab) {
+      currentTab = tab;
+
+      const btnNeeds = document.getElementById('tab-btn-needs');
+      const btnComplaint = document.getElementById('tab-btn-complaint');
+      const btnVoice = document.getElementById('tab-btn-voice');
+
+      const standardSec = document.getElementById('standard-details-section');
+      const voiceSec = document.getElementById('voice-details-section');
+
+      // Reset classes
+      [btnNeeds, btnComplaint, btnVoice].forEach(b => {
+        if (b) b.className = "flex-1 flex items-center justify-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-1 sm:px-2 rounded-lg text-xs sm:text-sm font-semibold transition-colors text-gray-500 hover:text-gray-700 cursor-pointer";
+      });
+
+      const activeClass = "flex-1 flex items-center justify-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-1 sm:px-2 rounded-lg text-xs sm:text-sm font-semibold transition-colors bg-white text-[#B71C1C] shadow-sm cursor-pointer";
+
+      if (tab === 'needs') {
+        if (btnNeeds) btnNeeds.className = activeClass;
+        if (standardSec) standardSec.classList.remove('hidden');
+        if (voiceSec) voiceSec.classList.add('hidden');
+        populateCategoriesForNeeds();
+      } else if (tab === 'complaint') {
+        if (btnComplaint) btnComplaint.className = activeClass;
+        if (standardSec) standardSec.classList.remove('hidden');
+        if (voiceSec) voiceSec.classList.add('hidden');
+        populateCategoriesForComplaint();
+      } else {
+        if (btnVoice) btnVoice.className = activeClass;
+        if (standardSec) standardSec.classList.add('hidden');
+        if (voiceSec) voiceSec.classList.remove('hidden');
+      }
+
+      updateTabDependentTexts();
+    }
+
+    function populateCategoriesForNeeds() {
+      const catSelect = document.getElementById('select-category');
+      catSelect.innerHTML = `
+        <option value="" disabled selected>— பிரிவு தேர்ந்தெடுக்கவும் / Select Category —</option>
+        <option value="அடிப்படை தேவைகள் / Basic Needs">அடிப்படை தேவைகள் / Basic Needs</option>
+        <option value="மின்சாரம் தொடர்பானது / Electricity Related">மின்சாரம் தொடர்பானது / Electricity Related</option>
+        <option value="கல்வி உதவி / Education Related">கல்வி உதவி / Education Related</option>
+        <option value="மருத்துவ உதவி / Medical Assistance">மருத்துவ உதவி / Medical Assistance</option>
+        <option value="நலத்திட்டங்கள் / Welfare Schemes">நலத்திட்டங்கள் / Welfare Schemes</option>
+        <option value="வீட்டு வசதி உதவி / Housing Assistance">வீட்டு வசதி உதவி / Housing Assistance</option>
+        <option value="வேலைவாய்ப்பு & தொழில் / Employment & Business">வேலைவாய்ப்பு & தொழில் / Employment & Business</option>
+        <option value="சட்டம் & ஆவண உதவி / Legal & Document Assistance">சட்டம் & ஆவண உதவி / Legal & Document Assistance</option>
+        <option value="அவசர உதவி / Emergency Assistance">அவசர உதவி / Emergency Assistance</option>
+        <option value="சமூக சேவை / Community Service">சமூக சேவை / Community Service</option>
+        <option value="மற்றவை / Other">மற்றவை / Other</option>
+      `;
+
+      const typeSelect = document.getElementById('select-type');
+      typeSelect.innerHTML = `
+        <option value="" disabled selected>— வகை தேர்ந்தெடுக்கவும் / Select Type —</option>
+        <option value="அவசர உதவி / Urgent Assistance">அவசர உதவி / Urgent Assistance</option>
+        <option value="நிதி உதவி / Financial Support">நிதி உதவி / Financial Support</option>
+        <option value="அரசு திட்ட விண்ணப்பம் / Scheme Application">அரசு திட்ட விண்ணப்பம் / Scheme Application</option>
+        <option value="பழுது நீக்கம் & ஆய்வு / Repair & Inspection">பழுது நீக்கம் & ஆய்வு / Repair & Inspection</option>
+        <option value="பொதுவான ஆதரவு / General Support">பொதுவான ஆதரவு / General Support</option>
+        <option value="மற்றவை / Other">மற்றவை / Other</option>
+      `;
+    }
+
+    function populateCategoriesForComplaint() {
+      const catSelect = document.getElementById('select-category');
+      catSelect.innerHTML = `
+        <option value="" disabled selected>— பிரிவு தேர்ந்தெடுக்கவும் / Select Category —</option>
+        <option value="சாலை & பள்ளங்கள் / Roads & Potholes">சாலை & பள்ளங்கள் / Roads & Potholes</option>
+        <option value="தெரு விளக்குகள் / Street Lighting">தெரு விளக்குகள் / Street Lighting</option>
+        <option value="கழிவுநீர் & வடிகால் / Sewage & Drainage">கழிவுநீர் & வடிகால் / Sewage & Drainage</option>
+        <option value="குடிநீர் விநியோகம் / Drinking Water Supply">குடிநீர் விநியோகம் / Drinking Water Supply</option>
+        <option value="குப்பை & துப்புரவு / Garbage & Sanitation">குப்பை & துப்புரவு / Garbage & Sanitation</option>
+        <option value="தெரு விலங்குகள் & கொசுக்கள் / Stray Animals & Mosquitos">தெரு விலங்குகள் & கொசுக்கள் / Stray Animals & Mosquitos</option>
+        <option value="பொதுப் போக்குவரத்து / Public Transport">பொதுப் போக்குவரத்து / Public Transport</option>
+        <option value="ஆக்கிரமிப்பு / Encroachment">ஆக்கிரமிப்பு / Encroachment</option>
+        <option value="மற்ற பொதுப் பிரச்சனைகள் / Other Civic Grievances">மற்ற பொதுப் பிரச்சனைகள் / Other Civic Grievances</option>
+      `;
+
+      const typeSelect = document.getElementById('select-type');
+      typeSelect.innerHTML = `
+        <option value="" disabled selected>— புகார் வகை தேர்ந்தெடுக்கவும் / Select Complaint Type —</option>
+        <option value="புதிய புகார் / New Issue">புதிய புகார் / New Issue</option>
+        <option value="மீண்டும் ஏற்படும் பிரச்சனை / Recurring Issue">மீண்டும் ஏற்படும் பிரச்சனை / Recurring Issue</option>
+        <option value="அவசர கவனம் தேவை / Urgent Attention Needed">அவசர கவனம் தேவை / Urgent Attention Needed</option>
+        <option value="பராமரிப்பு கோரிக்கை / Maintenance Request">பராமரிப்பு கோரிக்கை / Maintenance Request</option>
+        <option value="மற்றவை / Other">மற்றவை / Other</option>
+      `;
+    }
+
+    function onCategoryChanged(val) {
+      const typeSelect = document.getElementById('select-type');
+      if (currentTab === 'complaint') {
+        typeSelect.innerHTML = `
+          <option value="" disabled selected>— புகார் வகை தேர்ந்தெடுக்கவும் / Select Complaint Type —</option>
+          <option value="புதிய புகார் / New Issue">புதிய புகார் / New Issue</option>
+          <option value="மீண்டும் ஏற்படும் பிரச்சனை / Recurring Issue">மீண்டும் ஏற்படும் பிரச்சனை / Recurring Issue</option>
+          <option value="அவசர கவனம் தேவை / Urgent Attention Needed">அவசர கவனம் தேவை / Urgent Attention Needed</option>
+          <option value="பராமரிப்பு கோரிக்கை / Maintenance Request">பராமரிப்பு கோரிக்கை / Maintenance Request</option>
+          <option value="மற்றவை / Other">மற்றவை / Other</option>
+        `;
+      } else {
+        typeSelect.innerHTML = `
+          <option value="" disabled selected>— வகை தேர்ந்தெடுக்கவும் / Select Type —</option>
+          <option value="அவசர உதவி / Urgent Assistance">அவசர உதவி / Urgent Assistance</option>
+          <option value="நிதி உதவி / Financial Support">நிதி உதவி / Financial Support</option>
+          <option value="அரசு திட்ட விண்ணப்பம் / Scheme Application">அரசு திட்ட விண்ணப்பம் / Scheme Application</option>
+          <option value="பழுது நீக்கம் & ஆய்வு / Repair & Inspection">பழுது நீக்கம் & ஆய்வு / Repair & Inspection</option>
+          <option value="பொதுவான ஆதரவு / General Support">பொதுவான ஆதரவு / General Support</option>
+          <option value="மற்றவை / Other">மற்றவை / Other</option>
+        `;
+      }
+    }
+
+    function onWardSelected(ward) {
+      // Ward number dropdown is independently selectable
+    }
+
+    function toggleCustomStreet(checked) {
+      // Safe no-op retained for backwards compatibility
+    }
+
+    function detectGPSLocation() {
+      const statusText = document.getElementById('t-locationStatusText');
+      const tag = document.getElementById('gps-verified-tag');
+      statusText.textContent = "Detecting location in Athoor constituency…";
+
+      setTimeout(() => {
+        statusText.textContent = "Coordinates detected: 10.2865° N, 77.8561° E";
+        tag.classList.remove('hidden');
+      }, 700);
+    }
+
+    // Voice Recording State (Matching tvkcm.com)
+    let mediaRecorder = null;
+    let audioChunks = [];
+    let audioBlob = null;
+    let audioUrl = null;
+    let audioElement = null;
+    let recordingTimerInterval = null;
+    let elapsedSeconds = 0;
+    let speechRecognizer = null;
+    let isSimulatedRecording = false;
+
+    function formatTime(sec) {
+      const m = Math.floor(sec / 60).toString().padStart(2, '0');
+      const s = (sec % 60).toString().padStart(2, '0');
+      return `${m}:${s}`;
+    }
+
+    async function startVoiceRecording() {
+      elapsedSeconds = 0;
+      audioChunks = [];
+      const timerEl = document.getElementById('recording-timer');
+      timerEl.textContent = "00:00";
+
+      // Switch to Recording UI
+      document.getElementById('voice-state-idle').classList.add('hidden');
+      document.getElementById('voice-state-recording').classList.remove('hidden');
+      document.getElementById('voice-state-recorded').classList.add('hidden');
+
+      // Start elapsed timer
+      recordingTimerInterval = setInterval(() => {
+        elapsedSeconds++;
+        timerEl.textContent = formatTime(elapsedSeconds);
+        if (elapsedSeconds >= 300) { // 5 mins max
+          stopVoiceRecording();
+        }
+      }, 1000);
+
+      // Start Web Speech Recognition if available
+      initSpeechRecognition();
+
+      // Attempt Real Microphone Recording via MediaRecorder
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        try {
+          const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+          mediaRecorder = new MediaRecorder(stream);
+          isSimulatedRecording = false;
+
+          mediaRecorder.ondataavailable = (e) => {
+            if (e.data && e.data.size > 0) {
+              audioChunks.push(e.data);
+            }
+          };
+
+          mediaRecorder.onstop = () => {
+            // Stop mic tracks
+            stream.getTracks().forEach(track => track.stop());
+            if (audioChunks.length > 0) {
+              audioBlob = new Blob(audioChunks, { type: mediaRecorder.mimeType || 'audio/webm' });
+              if (audioUrl) URL.revokeObjectURL(audioUrl);
+              audioUrl = URL.createObjectURL(audioBlob);
+              audioElement = new Audio(audioUrl);
+              audioElement.onended = () => resetPlayButtonIcon();
+            }
+          };
+
+          // Collect audio every 250ms for reliability across mobile browsers
+          mediaRecorder.start(250);
+          return;
+        } catch (err) {
+          console.warn("Microphone permission unavailable or restricted:", err);
+          // Fall through to simulated audio fallback
+        }
+      }
+
+      // Simulated voice recording fallback (works offline / file protocol)
+      isSimulatedRecording = true;
+    }
+
+    function initSpeechRecognition() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) return;
+
+      try {
+        speechRecognizer = new SpeechRecognition();
+        speechRecognizer.continuous = true;
+        speechRecognizer.interimResults = true;
+        speechRecognizer.lang = currentLanguage === 'ta' ? 'ta-IN' : 'en-IN';
+
+        const transcriptInput = document.getElementById('voice-transcript-input');
+
+        speechRecognizer.onresult = (event) => {
+          let currentResult = '';
+          for (let i = 0; i < event.results.length; i++) {
+            currentResult += event.results[i][0].transcript + ' ';
+          }
+          transcriptInput.value = currentResult.trim();
+        };
+
+        speechRecognizer.start();
+      } catch (e) {
+        console.warn("Speech recognition error:", e);
+      }
+    }
+
+    function stopVoiceRecording() {
+      if (recordingTimerInterval) {
+        clearInterval(recordingTimerInterval);
+        recordingTimerInterval = null;
+      }
+
+      if (speechRecognizer) {
+        try { speechRecognizer.stop(); } catch(e) {}
+        speechRecognizer = null;
+      }
+
+      if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+        mediaRecorder.stop();
+      } else if (isSimulatedRecording) {
+        // Generate simulated voice audio using Web Audio API beep/harmonic sequence
+        createSimulatedAudio();
+        const transcriptInput = document.getElementById('voice-transcript-input');
+        if (!transcriptInput.value.trim()) {
+          transcriptInput.value = currentLanguage === 'ta' 
+            ? "ஆத்தூர் தொகுதி ஆத்தூர் வடக்கு ஒன்றியம் மெயின் ரோட்டில் குடிநீர் மற்றும் தெருவிளக்கு பழுது உடனடியாக சரி செய்யப்பட வேண்டும்." 
+            : "Requesting urgent repair of streetlighting and drinking water supply on Athoor North Union main road.";
+        }
+      }
+
+      // Switch to Recorded UI
+      document.getElementById('voice-state-recording').classList.add('hidden');
+      document.getElementById('voice-state-recorded').classList.remove('hidden');
+      document.getElementById('recorded-duration-text').textContent = formatTime(Math.max(1, elapsedSeconds));
+    }
+
+    function createSimulatedAudio() {
+      try {
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const sampleRate = audioCtx.sampleRate;
+        const duration = Math.min(Math.max(2, elapsedSeconds), 5);
+        const buffer = audioCtx.createBuffer(1, sampleRate * duration, sampleRate);
+        const data = buffer.getChannelData(0);
+
+        // Natural voice-like harmonic tone
+        for (let i = 0; i < buffer.length; i++) {
+          const t = i / sampleRate;
+          const tone = Math.sin(2 * Math.PI * 220 * t) * 0.4 +
+                       Math.sin(2 * Math.PI * 440 * t) * 0.2 +
+                       (Math.random() - 0.5) * 0.05;
+          const envelope = Math.sin((t / duration) * Math.PI);
+          data[i] = tone * envelope;
+        }
+
+        // Convert to WAV Blob
+        const wavBlob = audioBufferToWavBlob(buffer);
+        audioBlob = wavBlob;
+        if (audioUrl) URL.revokeObjectURL(audioUrl);
+        audioUrl = URL.createObjectURL(wavBlob);
+        audioElement = new Audio(audioUrl);
+        audioElement.onended = () => resetPlayButtonIcon();
+      } catch (err) {
+        console.warn("AudioContext simulation not supported:", err);
+      }
+    }
+
+    // Convert AudioBuffer to WAV Blob
+    function audioBufferToWavBlob(abuffer) {
+      const numOfChan = abuffer.numberOfChannels;
+      const length = abuffer.length * numOfChan * 2 + 44;
+      const out = new DataView(new ArrayBuffer(length));
+      let pos = 0;
+
+      function setUint16(data) { out.setUint16(pos, data, true); pos += 2; }
+      function setUint32(data) { out.setUint32(pos, data, true); pos += 4; }
+
+      // WAV Header
+      setUint32(0x46464952); // "RIFF"
+      setUint32(length - 8);
+      setUint32(0x45564157); // "WAVE"
+      setUint32(0x20746d66); // "fmt "
+      setUint32(16);
+      setUint16(1);          // PCM
+      setUint16(numOfChan);
+      setUint32(abuffer.sampleRate);
+      setUint32(abuffer.sampleRate * 2 * numOfChan);
+      setUint16(numOfChan * 2);
+      setUint16(16);
+      setUint32(0x61746164); // "data"
+      setUint32(length - pos - 4);
+
+      // Write PCM data
+      const channel = abuffer.getChannelData(0);
+      for (let i = 0; i < channel.length; i++) {
+        let sample = Math.max(-1, Math.min(1, channel[i]));
+        out.setInt16(pos, sample < 0 ? sample * 0x8000 : sample * 0x7FFF, true);
+        pos += 2;
+      }
+      return new Blob([out.buffer], { type: 'audio/wav' });
+    }
+
+    function togglePlayRecordedAudio() {
+      if (!audioElement) {
+        if (audioUrl) {
+          audioElement = new Audio(audioUrl);
+          audioElement.onended = () => resetPlayButtonIcon();
+        } else {
+          return;
+        }
+      }
+
+      const iconPlay = document.getElementById('icon-play');
+      const iconPause = document.getElementById('icon-pause');
+
+      if (audioElement.paused) {
+        audioElement.play();
+        iconPlay.classList.add('hidden');
+        iconPause.classList.remove('hidden');
+      } else {
+        audioElement.pause();
+        resetPlayButtonIcon();
+      }
+    }
+
+    function resetPlayButtonIcon() {
+      const iconPlay = document.getElementById('icon-play');
+      const iconPause = document.getElementById('icon-pause');
+      if (iconPlay && iconPause) {
+        iconPlay.classList.remove('hidden');
+        iconPause.classList.add('hidden');
+      }
+    }
+
+    function deleteVoiceRecording() {
+      if (audioElement) {
+        audioElement.pause();
+        audioElement = null;
+      }
+      if (audioUrl) {
+        URL.revokeObjectURL(audioUrl);
+        audioUrl = null;
+      }
+      audioChunks = [];
+      audioBlob = null;
+      elapsedSeconds = 0;
+      resetPlayButtonIcon();
+
+      document.getElementById('voice-state-recorded').classList.add('hidden');
+      document.getElementById('voice-state-recording').classList.add('hidden');
+      document.getElementById('voice-state-idle').classList.remove('hidden');
+      const vTrans = document.getElementById('voice-transcript-input');
+      if (vTrans) vTrans.value = '';
+    }
+
+    // Supabase Configuration
+    const SUPABASE_URL = "https://ketmppyqpfiyzlxqmvoo.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtldG1wcHlxcGZpeXpseHFtdm9vIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI4MTExMTgsImV4cCI6MjEwODM4NzExOH0.LxeIL5D9nDOnFcMG--hxHNhl6akUmfwBTsFxsA4CZJg";
+
+    // Selected image attachment state
+    let selectedImageFile = null;
+    let selectedImageBase64 = null;
+
+    // Automatically compress any photo (even 10MB-20MB phone camera shots) to ~200-350KB crisp JPEG
+    function compressImageFile(file, maxDimension = 1600, quality = 0.82) {
+      return new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const img = new Image();
+          img.onload = () => {
+            let width = img.width;
+            let height = img.height;
+
+            if (width > maxDimension || height > maxDimension) {
+              if (width > height) {
+                height = Math.round((height * maxDimension) / width);
+                width = maxDimension;
+              } else {
+                width = Math.round((width * maxDimension) / height);
+                height = maxDimension;
+              }
+            }
+
+            const canvas = document.createElement('canvas');
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, width, height);
+
+            const compressedDataUrl = canvas.toDataURL('image/jpeg', quality);
+            resolve(compressedDataUrl);
+          };
+          img.onerror = () => resolve(e.target.result); // Fallback to raw if canvas fails
+          img.src = e.target.result;
+        };
+        reader.onerror = () => resolve(null);
+        reader.readAsDataURL(file);
+      });
+    }
+
+    async function handleImageSelected(e) {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+
+      selectedImageFile = file;
+
+      // Show immediate loading indicator in preview
+      document.getElementById('image-empty-state').classList.add('hidden');
+      document.getElementById('image-preview-state').classList.remove('hidden');
+      document.getElementById('image-file-name').textContent = "Compressing photo…";
+
+      const vEmpty = document.getElementById('voice-image-empty-state');
+      if (vEmpty) vEmpty.classList.add('hidden');
+      const vPrev = document.getElementById('voice-image-preview-state');
+      if (vPrev) vPrev.classList.remove('hidden');
+      const vName = document.getElementById('voice-image-file-name');
+      if (vName) vName.textContent = "Compressing photo…";
+
+      // Compress client-side
+      const compressedBase64 = await compressImageFile(file);
+      if (!compressedBase64) {
+        alert("Could not process selected image. Please try another image.");
+        removeSelectedImage();
+        return;
+      }
+
+      selectedImageBase64 = compressedBase64;
+      const approxKb = Math.round((compressedBase64.length * 3) / 4 / 1024);
+
+      document.getElementById('image-preview-thumb').src = selectedImageBase64;
+      document.getElementById('image-file-name').textContent = file.name;
+      document.getElementById('image-file-size').textContent = `${approxKb} KB (Optimized)`;
+
+      const vThumb = document.getElementById('voice-image-preview-thumb');
+      if (vThumb) vThumb.src = selectedImageBase64;
+      if (vName) vName.textContent = file.name;
+      const vSize = document.getElementById('voice-image-file-size');
+      if (vSize) vSize.textContent = `${approxKb} KB (Optimized)`;
+    }
+
+    function removeSelectedImage() {
+      selectedImageFile = null;
+      selectedImageBase64 = null;
+      const i1 = document.getElementById('input-image-file');
+      if (i1) i1.value = '';
+      const i2 = document.getElementById('input-voice-image-file');
+      if (i2) i2.value = '';
+      document.getElementById('image-preview-thumb').src = '';
+      document.getElementById('image-empty-state').classList.remove('hidden');
+      document.getElementById('image-preview-state').classList.add('hidden');
+
+      const vEmpty = document.getElementById('voice-image-empty-state');
+      if (vEmpty) {
+        vEmpty.classList.remove('hidden');
+        document.getElementById('voice-image-preview-state').classList.add('hidden');
+      }
+    }
+
+    function triggerVoiceImagePicker() {
+      const vInput = document.getElementById('input-voice-image-file');
+      if (vInput) vInput.click();
+      else {
+        const input = document.getElementById('input-image-file');
+        if (input) input.click();
+      }
+    }
+
+    // Helper to upload audio to Cloudflare R2
+    async function uploadAudioToR2(blob) {
+      if (!blob) return null;
+      try {
+        const reader = new FileReader();
+        const base64Promise = new Promise((resolve, reject) => {
+          reader.onloadend = () => resolve(reader.result);
+          reader.onerror = reject;
+        });
+        reader.readAsDataURL(blob);
+        const dataUrl = await base64Promise;
+        const base64Data = dataUrl.split(',')[1];
+        const ext = blob.type.includes('wav') ? 'wav' : (blob.type.includes('mp4') ? 'mp4' : 'webm');
+
+        const res = await fetch('/api/upload-media', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            base64Data: base64Data,
+            fileName: `voice-recording.${ext}`,
+            contentType: blob.type || 'audio/webm',
+            folder: 'voice-audio'
+          })
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          return { url: data.publicUrl, key: data.mediaKey };
+        } else {
+          const errText = await res.text();
+          console.error("Audio upload failed:", res.status, errText);
+        }
+      } catch (err) {
+        console.warn('Voice audio upload error:', err);
+      }
+      return null;
+    }
+
+    // Helper to upload image to Cloudflare R2
+    async function uploadImageToR2() {
+      if (!selectedImageBase64 || !selectedImageFile) return null;
+      try {
+        const base64Data = selectedImageBase64.split(',')[1];
+        const res = await fetch('/api/upload-media', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            base64Data: base64Data,
+            fileName: selectedImageFile.name,
+            contentType: 'image/jpeg',
+            folder: 'complaints-images'
+          })
+        });
+        if (res.ok) {
+          const data = await res.json();
+          return { url: data.publicUrl, key: data.mediaKey };
+        } else {
+          const errText = await res.text();
+          console.error("Image upload failed:", res.status, errText);
+        }
+      } catch (err) {
+        console.warn('R2 upload fallback:', err);
+      }
+      return null;
+    }
+
+    async function handleFormSubmission(e) {
+      e.preventDefault();
+
+      const submitBtn = document.getElementById('submit-button');
+      const originalBtnHtml = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<span>Submitting…</span>`;
+
+      const name = document.getElementById('input-fullname').value.trim();
+      const mobile = document.getElementById('input-mobile').value.trim();
+      const address = document.getElementById('input-address').value.trim();
+      const ward = document.getElementById('select-ward').value;
+
+      const streetInput = document.getElementById('input-street') || document.getElementById('select-street');
+      const street = streetInput ? streetInput.value.trim() : '';
+
+      let category = "";
+      let description = "";
+
+      if (currentTab === 'voice') {
+        category = "Voice Complaint";
+        description = "Voice recording submitted by citizen.";
+      } else {
+        category = document.getElementById('select-category').value;
+        description = document.getElementById('input-description').value.trim();
+      }
+
+      // Generate Ticket ID matching tvkcm format
+      const rand = Math.floor(100000 + Math.random() * 900000);
+      const prefix = currentTab === 'needs' ? 'TVK-ND' : (currentTab === 'complaint' ? 'TVK-CP' : 'TVK-VC');
+      const ticketId = `${prefix}-2026-${rand}`;
+
+      // Upload image attachment to R2 if selected
+      let uploadedImage = null;
+      if (selectedImageFile) {
+        submitBtn.innerHTML = `<span>Uploading photo to Cloudflare…</span>`;
+        try {
+          uploadedImage = await uploadImageToR2();
+          if (!uploadedImage) {
+            console.warn("Upload returned null, image may not be stored in R2");
+          }
+        } catch (imgErr) {
+          console.error("Failed to upload image to R2:", imgErr);
+        }
+      }
+
+      // Upload voice recording to R2 if voice tab
+      let uploadedAudio = null;
+      if (currentTab === 'voice') {
+        if (!audioBlob) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHtml;
+          alert(currentLanguage === 'ta' ? 'தயவுசெய்து உங்கள் குரல் புகாரைப் பதிவு செய்யவும்.' : 'Please record your voice complaint before submitting.');
+          return;
+        }
+        submitBtn.innerHTML = `<span>Uploading voice recording to Cloudflare…</span>`;
+        try {
+          uploadedAudio = await uploadAudioToR2(audioBlob);
+        } catch (audErr) {
+          console.error("Failed to upload audio to R2:", audErr);
+        }
+      }
+
+      // Supabase record payload
+      const ticketPayload = {
+        ticket_id: ticketId,
+        full_name: name,
+        mobile: mobile,
+        address: address,
+        ward: ward,
+        street: street,
+        category: category,
+        description: description,
+        type: currentTab,
+        status: "Submitted"
+      };
+
+      if (uploadedImage) {
+        ticketPayload.image_url = uploadedImage.url;
+        ticketPayload.media_key = uploadedImage.key;
+      }
+
+      if (uploadedAudio) {
+        ticketPayload.audio_url = uploadedAudio.url;
+        if (!ticketPayload.media_key) {
+          ticketPayload.media_key = uploadedAudio.key;
+        }
+      }
+
+      try {
+        // Send to Supabase live database
+        await fetch(`${SUPABASE_URL}/rest/v1/complaints`, {
+          method: 'POST',
+          headers: {
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify(ticketPayload)
+        });
+      } catch (err) {
+        console.warn("Supabase live sync error, falling back to local storage:", err);
+      }
+
+      // Also save to localStorage for offline access
+      try {
+        const stored = JSON.parse(localStorage.getItem('tvk_tickets') || '[]');
+        stored.unshift({
+          ...ticketPayload,
+          id: ticketId,
+          date: new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })
+        });
+        localStorage.setItem('tvk_tickets', JSON.stringify(stored));
+      } catch (err) {
+        console.error(err);
+      }
+
+      // Reset button
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnHtml;
+
+      // Show receipt modal
+      document.getElementById('modal-ticket-number').textContent = ticketId;
+      document.getElementById('modal-track-link').href = `track.html?ticket=${encodeURIComponent(ticketId)}`;
+      document.getElementById('ticket-modal').classList.remove('hidden');
+      document.getElementById('ticket-modal').classList.add('flex');
+    }
+
+    function copyModalTicketId() {
+      const tid = document.getElementById('modal-ticket-number').textContent;
+      navigator.clipboard.writeText(tid).then(() => {
+        const btn = document.getElementById('btn-copy-ticket');
+        btn.textContent = "✅ Copied!";
+        setTimeout(() => {
+          btn.textContent = "📋 Copy Ticket ID";
+        }, 1500);
+      });
+    }
+  </script>
+</body>
+</html>

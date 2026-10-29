@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full antialiased">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Staff Login | TVK Makkal Sevai — Athoor</title>
+  <link rel="shortcut icon" href="favicon.png" />
+  <link rel="icon" href="favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{tvkRed:'#B71C1C',tvkDark:'#7F1212',tvkGold:'#FFD700'}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Mukta+Malar:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #F5F5F5; }
+    .tamil { font-family: 'Mukta Malar', 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-[#F5F5F5]">
+
+  <!-- HEADER -->
+  <header class="bg-[#B71C1C] text-white shadow-md">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-between gap-2 sm:gap-4">
+      <a href="index.html" class="flex items-center gap-2 sm:gap-3 group shrink min-w-0">
+        <div class="flex flex-col leading-tight min-w-0">
+          <span class="text-sm xs:text-base sm:text-xl font-bold whitespace-nowrap truncate">Tamilaga Vettri Kazhagam</span>
+          <span class="text-[9.5px] xs:text-[10.5px] sm:text-xs text-[#FFD700] font-extrabold tamil whitespace-nowrap truncate">உங்கள் உரிமையை பதிவு செய்யுங்கள்!</span>
+        </div>
+        <!-- Leader Portraits beside party name (Vijay + Anand, Rectangle Shape) -->
+        <div class="flex items-center gap-1 sm:gap-2 shrink-0 ml-1 sm:ml-2">
+          <div class="relative w-7 h-9 sm:w-9 sm:h-11 rounded-lg overflow-hidden ring-1.5 sm:ring-2 ring-[#FFD700] shadow-md bg-[#5C0A0A] shrink-0" title="C. Joseph Vijay - TVK தலைவர்">
+            <img alt="C. Joseph Vijay" class="object-cover object-[center_15%] w-full h-full" src="vijay.jpg" />
+          </div>
+          <div class="relative w-7 h-9 sm:w-9 sm:h-11 rounded-lg overflow-hidden ring-1.5 sm:ring-2 ring-[#FFD700] shadow-md bg-[#5C0A0A] shrink-0" title="N. Anand (Bussy Anand) - பொதுச் செயலாளர்">
+            <img alt="N. Anand (Bussy Anand)" class="object-cover object-top w-full h-full" src="anand.jpg" />
+          </div>
+        </div>
+      </a>
+      <nav class="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-medium shrink-0">
+        <a href="index.html" class="text-white hover:text-[#FFD700] transition-colors whitespace-nowrap hidden xs:inline">Public Portal</a>
+        <a href="track.html" class="text-white hover:text-[#FFD700] transition-colors whitespace-nowrap">Track</a>
+        <span class="bg-[#FFD700] text-[#7F1212] px-2.5 sm:px-3 py-1.5 rounded font-bold text-xs whitespace-nowrap">Staff Login</span>
+      </nav>
+    </div>
+  </header>
+  <div class="h-1 bg-[#FFD700]"></div>
+
+  <!-- LOGIN CARD -->
+  <main class="flex-1 flex items-center justify-center p-6">
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 max-w-md w-full">
+      <span class="inline-block bg-red-50 text-[#B71C1C] text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-4 border border-red-100">
+        🔒 Staff Access Only
+      </span>
+      <h1 class="text-2xl font-extrabold text-gray-900 mb-1">TVK Makkal Sevai</h1>
+      <p class="text-sm text-gray-500 mb-6">Sign in to manage Athoor constituency grievances.</p>
+
+      <!-- Error Banner -->
+      <div id="error-banner" class="hidden bg-red-50 border border-red-200 text-red-700 text-sm px-4 py-3 rounded-lg mb-4">
+        <span id="error-message">Invalid email or password. Please try again.</span>
+      </div>
+
+      <form onsubmit="handleLogin(event)" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+          <input type="email" id="login-email" required placeholder="staff@tvkmakkalvai.in"
+            class="w-full border border-gray-300 rounded-lg px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#B71C1C]" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+          <div class="relative">
+            <input type="password" id="login-password" required placeholder="••••••••"
+              class="w-full border border-gray-300 rounded-lg px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#B71C1C] pr-10" />
+            <button type="button" onclick="togglePasswordVisibility()" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-xs">
+              👁️
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" id="login-btn"
+          class="w-full bg-[#B71C1C] text-white py-3 rounded-lg font-bold hover:bg-[#7F1212] transition-colors shadow-sm cursor-pointer text-sm flex items-center justify-center gap-2">
+          <span id="login-btn-text">Sign In to Dashboard</span>
+        </button>
+      </form>
+
+      <div class="mt-6 p-3.5 bg-gray-50 border border-gray-200 rounded-lg text-xs text-gray-500 text-center leading-relaxed">
+        Access is by invitation only. Contact the secretary office to request an account.
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#B71C1C] text-white py-4 px-6 text-center text-xs text-red-200">
+    TVK Makkal Sevai — Athoor Constituency Staff Portal · Powered by SmartBill · Public Grievance Portal
+  </footer>
+
+  <!-- Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script>
+    const SUPABASE_URL = "https://ketmppyqpfiyzlxqmvoo.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtldG1wcHlxcGZpeXpseHFtdm9vIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI4MTExMTgsImV4cCI6MjEwODM4NzExOH0.LxeIL5D9nDOnFcMG--hxHNhl6akUmfwBTsFxsA4CZJg";
+    const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // Every time login page is opened, clear previous session and require fresh credentials
+    sessionStorage.removeItem('tvk_staff_session');
+    if (typeof sb !== 'undefined' && sb.auth) {
+      sb.auth.signOut().catch(() => {});
+    }
+    const emailInput = document.getElementById('login-email');
+    if (emailInput) emailInput.value = '';
+    const passInput = document.getElementById('login-password');
+    if (passInput) passInput.value = '';
+
+    async function handleLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value.trim();
+      const password = document.getElementById('login-password').value;
+      const btn = document.getElementById('login-btn');
+      const btnText = document.getElementById('login-btn-text');
+      const errorBanner = document.getElementById('error-banner');
+      const errorMsg = document.getElementById('error-message');
+
+      btn.disabled = true;
+      btnText.textContent = 'Signing in…';
+      errorBanner.classList.add('hidden');
+
+      const { data, error } = await sb.auth.signInWithPassword({ email, password });
+
+      if (error) {
+        errorMsg.textContent = error.message || 'Invalid email or password. Please try again.';
+        errorBanner.classList.remove('hidden');
+        btn.disabled = false;
+        btnText.textContent = 'Sign In to Dashboard';
+        return;
+      }
+
+      // Mark fresh session token
+      sessionStorage.setItem('tvk_staff_session', 'active_' + Date.now());
+      window.location.href = 'dashboard.html';
+    }
+
+    function togglePasswordVisibility() {
+      const input = document.getElementById('login-password');
+      input.type = input.type === 'password' ? 'text' : 'password';
+    }
+  </script>
+</body>
+</html>

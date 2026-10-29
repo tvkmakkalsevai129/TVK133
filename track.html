@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full antialiased">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Track Your Complaint | TVK Makkal Sevai — Athoor</title>
+  <meta name="description" content="Track your grievance status with the Athoor secretary office." />
+  <link rel="canonical" href="https://tvkmakkalvai.in/track.html" />
+  <meta property="og:title" content="Track Complaint | TVK Makkal Sevai — Athoor" />
+  <meta property="og:description" content="Track your grievance status with the Athoor secretary office." />
+  <meta property="og:url" content="https://tvkmakkalvai.in/track.html" />
+  <link rel="shortcut icon" href="favicon.png" />
+  <link rel="icon" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            tvkRed: '#B71C1C',
+            tvkDarkRed: '#7F1212',
+            tvkGold: '#FFD700',
+            tvkCream: '#FFF8DC',
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Mukta+Malar:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #F5F5F5;
+      color: #1F2937;
+    }
+    .tamil-text {
+      font-family: 'Mukta Malar', 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-full flex flex-col bg-[#F5F5F5]">
+
+  <!-- HEADER -->
+  <header class="bg-[#B71C1C] text-white shadow-md relative z-30">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-between gap-2 sm:gap-4">
+      <a href="index.html" class="flex items-center gap-2 sm:gap-3 group shrink min-w-0">
+        <div class="flex flex-col leading-tight min-w-0">
+          <span class="text-sm xs:text-base sm:text-xl md:text-2xl font-bold text-white tracking-tight truncate sm:whitespace-nowrap">Tamilaga Vettri Kazhagam</span>
+          <span class="text-[9.5px] xs:text-[10.5px] sm:text-xs text-[#FFD700] font-bold tamil-text truncate sm:whitespace-nowrap">உங்கள் உரிமையை பதிவு செய்யுங்கள்!</span>
+        </div>
+        <!-- Leader Portraits beside party name (Vijay + Anand, Rectangle Shape) -->
+        <div class="flex items-center gap-1 sm:gap-2 shrink-0 ml-1 sm:ml-2">
+          <div class="relative w-7 h-9 sm:w-9 sm:h-11 rounded-lg overflow-hidden ring-1.5 sm:ring-2 ring-[#FFD700] shadow-md bg-[#5C0A0A] shrink-0" title="C. Joseph Vijay - TVK தலைவர்">
+            <img alt="C. Joseph Vijay" class="object-cover object-[center_15%] w-full h-full" src="vijay.jpg" />
+          </div>
+          <div class="relative w-7 h-9 sm:w-9 sm:h-11 rounded-lg overflow-hidden ring-1.5 sm:ring-2 ring-[#FFD700] shadow-md bg-[#5C0A0A] shrink-0" title="N. Anand (Bussy Anand) - பொதுச் செயலாளர்">
+            <img alt="N. Anand (Bussy Anand)" class="object-cover object-top w-full h-full" src="anand.jpg" />
+          </div>
+        </div>
+      </a>
+
+      <nav class="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm font-medium shrink-0">
+        <a class="text-white hover:text-[#FFD700] transition-colors whitespace-nowrap" href="index.html">Home</a>
+        <a class="text-[#FFD700] font-bold whitespace-nowrap" href="track.html">Track</a>
+        <a class="bg-[#FFD700] text-[#7F1212] px-2.5 sm:px-4 py-1.5 rounded font-bold hover:bg-yellow-300 transition-colors shadow-sm whitespace-nowrap text-xs sm:text-sm" href="login.html">Staff Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Gold Top Accent Line -->
+  <div class="h-1 bg-[#FFD700]"></div>
+
+  <!-- MAIN -->
+  <main class="flex-1 max-w-3xl mx-auto w-full px-4 py-10">
+    
+    <!-- Search Card -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 sm:p-8 mb-8 text-center">
+      <h1 class="text-2xl font-extrabold text-gray-900 mb-2">Track Your Complaint</h1>
+      <p class="text-sm text-gray-500 mb-6">Enter your ticket ID to see the current status and secretary office updates.</p>
+
+      <div class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+        <input 
+          type="text" 
+          id="ticket-search-input" 
+          placeholder="TVK-ND-2026-001234" 
+          class="flex-1 border border-gray-300 rounded-lg px-4 py-3 text-base font-mono uppercase font-bold focus:outline-none focus:ring-2 focus:ring-[#B71C1C]" 
+        />
+        <button 
+          onclick="searchTicket()" 
+          class="bg-[#B71C1C] text-white px-7 py-3 rounded-lg font-bold hover:bg-[#7F1212] transition-colors shadow-sm cursor-pointer"
+        >
+          Track
+        </button>
+      </div>
+    </div>
+
+    <!-- Result Box -->
+    <div id="status-card" class="hidden bg-white rounded-2xl shadow-sm border border-gray-200 p-6 sm:p-8">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-gray-100 gap-3">
+        <div>
+          <span id="ticket-badge" class="inline-block bg-red-50 text-[#B71C1C] font-mono font-extrabold text-lg px-3 py-1 rounded-md border border-red-100">
+            TVK-EB-2026-001234
+          </span>
+          <p class="text-xs text-gray-400 mt-1" id="ticket-date">Submitted on 22 Oct 2026</p>
+        </div>
+        <span class="self-start sm:self-center bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide" id="status-pill">
+          In Progress
+        </span>
+      </div>
+
+      <!-- Detail Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-gray-50 rounded-xl p-4 my-6 text-sm">
+        <div>
+          <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider block">Citizen</span>
+          <p class="font-bold text-gray-800" id="ticket-citizen">R. Sundaram</p>
+        </div>
+        <div>
+          <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider block">Union</span>
+          <p class="font-bold text-gray-800" id="ticket-ward">ஆத்தூர் வடக்கு ஒன்றியம்</p>
+        </div>
+        <div>
+          <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider block">Category</span>
+          <p class="font-bold text-gray-800" id="ticket-cat">Electricity Related</p>
+        </div>
+        <div>
+          <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider block">Officer / ஒருங்கிணைப்பாளர்</span>
+          <p class="font-bold text-gray-800" id="ticket-officer">Athoor Constituency Coordinator</p>
+        </div>
+      </div>
+
+      <div class="mb-6">
+        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Grievance Description:</h4>
+        <p class="text-sm text-gray-700 bg-gray-50/70 p-3.5 rounded-lg border border-gray-100 leading-relaxed" id="ticket-desc">
+          Transformer sparking on BB Road during peak hours, causing frequent power trippings.
+        </p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="space-y-6 relative pl-6 border-l-2 border-gray-200 ml-3">
+        <div class="relative">
+          <div class="absolute -left-[31px] top-0.5 w-4 h-4 rounded-full bg-green-500 border-2 border-white shadow"></div>
+          <p class="text-sm font-bold text-gray-900">Grievance Received</p>
+          <p class="text-xs text-gray-500">Ticket recorded in the Athoor secretary office portal.</p>
+          <span class="text-[10px] text-gray-400">22 Oct 2026 · 10:15 AM</span>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-[31px] top-0.5 w-4 h-4 rounded-full bg-green-500 border-2 border-white shadow"></div>
+          <p class="text-sm font-bold text-gray-900">Reviewed by Secretary Office</p>
+          <p class="text-xs text-gray-500">Classified and assigned to Ward Officer.</p>
+          <span class="text-[10px] text-gray-400">22 Oct 2026 · 02:30 PM</span>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-[31px] top-0.5 w-4 h-4 rounded-full bg-[#B71C1C] ring-4 ring-red-100 border-2 border-white shadow"></div>
+          <p class="text-sm font-bold text-[#B71C1C]">Field Team Dispatched</p>
+          <p class="text-xs text-gray-600">Site inspection and repair coordination underway.</p>
+          <span class="text-[10px] text-gray-400">23 Oct 2026 · 11:00 AM</span>
+        </div>
+
+        <div class="relative opacity-50">
+          <div class="absolute -left-[31px] top-0.5 w-4 h-4 rounded-full bg-gray-300 border-2 border-white"></div>
+          <p class="text-sm font-bold text-gray-700">Resolved & Closed</p>
+          <p class="text-xs text-gray-400">Work completion sign-off and citizen confirmation.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#B71C1C] text-white py-6 px-6 mt-auto">
+    <div class="max-w-4xl mx-auto space-y-4">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-center sm:text-left">
+        <p class="font-medium">Tamilaga Vettri Kazhagam — Serving the People · Athoor Constituency</p>
+        <p class="text-[#FFD700] font-medium tamil-text">தமிழக வெற்றிக் கழகம் — ஆத்தூர் தொகுதி</p>
+      </div>
+      <div class="text-center text-xs text-red-300/80 pt-2 border-t border-red-800/40">
+        Powered by SmartBill · Public Grievance Portal
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const SUPABASE_URL = "https://ketmppyqpfiyzlxqmvoo.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtldG1wcHlxcGZpeXpseHFtdm9vIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI4MTExMTgsImV4cCI6MjEwODM4NzExOH0.LxeIL5D9nDOnFcMG--hxHNhl6akUmfwBTsFxsA4CZJg";
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const tid = urlParams.get('ticket');
+      if (tid) {
+        document.getElementById('ticket-search-input').value = tid;
+        searchTicket();
+      }
+    });
+
+    async function searchTicket() {
+      const input = document.getElementById('ticket-search-input').value.trim().toUpperCase();
+      if (!input) return;
+
+      const card = document.getElementById('status-card');
+
+      // 1. Try querying Supabase in real-time
+      try {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/complaints?ticket_id=eq.${encodeURIComponent(input)}&select=*`, {
+          headers: {
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+          }
+        });
+        const records = await response.json();
+
+        if (records && records.length > 0) {
+          const rec = records[0];
+          document.getElementById('ticket-badge').textContent = rec.ticket_id;
+          const createdDate = rec.created_at ? new Date(rec.created_at).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }) : 'Recently';
+          document.getElementById('ticket-date').textContent = `Submitted on ${createdDate}`;
+          document.getElementById('status-pill').textContent = rec.status || "Submitted";
+          document.getElementById('ticket-citizen').textContent = rec.full_name;
+          document.getElementById('ticket-ward').textContent = `${rec.ward} (${rec.street || 'Athoor'})`;
+          document.getElementById('ticket-cat').textContent = rec.category || "General";
+          document.getElementById('ticket-desc').textContent = rec.description;
+          card.classList.remove('hidden');
+          card.scrollIntoView({ behavior: 'smooth' });
+          return;
+        }
+      } catch (err) {
+        console.warn("Supabase lookup error:", err);
+      }
+
+      // 2. Check localStorage backup
+      const stored = JSON.parse(localStorage.getItem('tvk_tickets') || '[]');
+      const found = stored.find(t => t.id && t.id.toUpperCase() === input);
+
+      if (found) {
+        document.getElementById('ticket-badge').textContent = found.id;
+        document.getElementById('ticket-date').textContent = `Submitted on ${found.date}`;
+        document.getElementById('status-pill').textContent = found.status || "Submitted";
+        document.getElementById('ticket-citizen').textContent = found.name;
+        document.getElementById('ticket-ward').textContent = `${found.ward} (${found.street || 'Athoor'})`;
+        document.getElementById('ticket-cat').textContent = found.category || "General";
+        document.getElementById('ticket-desc').textContent = found.description;
+        card.classList.remove('hidden');
+        card.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+
+      // 3. Fallback sample display
+      document.getElementById('ticket-badge').textContent = input;
+      document.getElementById('ticket-date').textContent = "Submitted on 22 Oct 2026";
+      document.getElementById('status-pill').textContent = "In Progress";
+      document.getElementById('ticket-citizen').textContent = "Citizen (Athoor)";
+      document.getElementById('ticket-ward').textContent = "ஆத்தூர் வடக்கு ஒன்றியம் (Athoor North Union)";
+      document.getElementById('ticket-cat').textContent = "Electricity Related";
+      document.getElementById('ticket-desc').textContent = "Transformer sparking on BB Road during peak hours, causing frequent power trippings.";
+      card.classList.remove('hidden');
+      card.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
