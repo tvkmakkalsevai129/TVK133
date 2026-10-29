@@ -1,6 +1,7 @@
 -- ==============================================================================
--- TVK MAKKAL SEVAI — DINDIGUL EAST DISTRICT (VEDASANDUR & DINDIGUL - TVK 133)
--- Leader: Thiru L. Dharmaraj (திண்டுக்கல் கிழக்கு மாவட்ட செயலாளர் திரு L. தர்மராஜ்)
+-- TVK MAKKAL SEVAI — TVK VEDASANDUR & DINDIGUL EAST DISTRICT (TVK 133)
+-- Leader: Thiru L. Dharmaraj (TVK Vedasandur & Dindigul East District Secretary)
+-- Tamil Title: திண்டுக்கல் கிழக்கு மாவட்ட செயலாளர் திரு L. தர்மராஜ்
 -- Constituencies: Vedasandur & Dindigul (வேடசந்தூர் மற்றும் திண்டுக்கல் தொகுதி)
 -- Unions:
 --   1. திண்டுக்கல் மேற்கு ஒன்றியம் (Dindigul West Union)
