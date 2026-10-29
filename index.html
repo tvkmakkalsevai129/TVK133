@@ -1533,12 +1533,14 @@
         console.warn("Supabase live sync error, falling back to local storage:", err);
       }
 
-      // Also save to localStorage for offline access
+      // Also save to localStorage for offline / instant access
       try {
         const stored = JSON.parse(localStorage.getItem('tvk_tickets') || '[]');
         stored.unshift({
           ...ticketPayload,
           id: ticketId,
+          ticket_id: ticketId,
+          created_at: new Date().toISOString(),
           date: new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })
         });
         localStorage.setItem('tvk_tickets', JSON.stringify(stored));

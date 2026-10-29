@@ -238,13 +238,16 @@
 
       // 2. Check localStorage backup
       const stored = JSON.parse(localStorage.getItem('tvk_tickets') || '[]');
-      const found = stored.find(t => t.id && t.id.toUpperCase() === input);
+      const found = stored.find(t => 
+        (t.ticket_id && t.ticket_id.toUpperCase() === input) || 
+        (t.id && t.id.toUpperCase() === input)
+      );
 
       if (found) {
-        document.getElementById('ticket-badge').textContent = found.id;
-        document.getElementById('ticket-date').textContent = `Submitted on ${found.date}`;
+        document.getElementById('ticket-badge').textContent = found.ticket_id || found.id;
+        document.getElementById('ticket-date').textContent = `Submitted on ${found.date || (found.created_at ? new Date(found.created_at).toLocaleDateString('en-IN') : 'Recently')}`;
         document.getElementById('status-pill').textContent = found.status || "Submitted";
-        document.getElementById('ticket-citizen').textContent = found.name;
+        document.getElementById('ticket-citizen').textContent = found.full_name || found.name;
         document.getElementById('ticket-ward').textContent = `${found.ward} (${found.street || 'Vedasandur'})`;
         document.getElementById('ticket-cat').textContent = found.category || "General";
         document.getElementById('ticket-desc').textContent = found.description;

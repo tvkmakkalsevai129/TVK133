@@ -412,6 +412,27 @@
       <!-- SCROLLABLE CONTENT BODY -->
       <main class="flex-1 overflow-y-auto p-2.5 sm:p-6 bg-[#FAF8F5]">
 
+        <!-- Database Schema Alert Banner (Visible if Supabase table is not yet initialized) -->
+        <div id="schema-alert-banner" class="hidden mb-4 p-4 rounded-2xl bg-amber-50 border-2 border-amber-300 text-amber-900 shadow-sm">
+          <div class="flex items-start gap-3">
+            <span class="text-2xl shrink-0">⚠️</span>
+            <div class="flex-1 text-xs sm:text-sm">
+              <strong class="font-bold text-amber-950 block mb-1">Supabase டேட்டாபேஸ் அட்டவணை இன்னும் தொடங்கப்படவில்லை (Supabase Setup Required)</strong>
+              <p class="leading-relaxed mb-2 text-amber-900">
+                உங்கள் புதிய Supabase திட்டத்தில் <code class="bg-amber-200/80 px-1.5 py-0.5 rounded font-mono font-bold text-amber-950">complaints</code> அட்டவணை இன்னும் உருவாக்கப்படவில்லை. தற்போது லோக்கல் பதிவுகள் (Local Browser Submissions) காட்டப்படுகின்றன.
+              </p>
+              <div class="flex flex-wrap items-center gap-2">
+                <a href="https://supabase.com/dashboard/project/vtfuhajbqbrotjsufnrj/sql" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-[#B71C1C] hover:bg-[#7F1212] text-white font-bold px-3 py-1.5 rounded-lg text-xs transition-colors shadow-sm">
+                  <span>Open Supabase SQL Editor ↗</span>
+                </a>
+                <span class="text-xs text-amber-800">
+                  <code class="font-mono font-bold bg-amber-100 px-1 py-0.5 rounded">supabase_schema.sql</code>-ல் உள்ள SQL குறியீட்டை SQL Editor-ல் ஒட்டி <strong>Run</strong> செய்யவும்.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- ===== DASHBOARD SECTION ===== -->
         <div id="section-dashboard">
 
@@ -1002,9 +1023,90 @@
     async function loadAllData() {
       const btn = document.getElementById('refresh-btn');
       if (btn) btn.classList.add('opacity-50');
-      const { data, error } = await sb.from('complaints').select('*').order('created_at', { ascending: false });
-      if (error) { console.error(error); if (btn) btn.classList.remove('opacity-50'); return; }
-      allComplaints = data || [];
+
+      let fetchedData = null;
+      let hasDbError = false;
+
+      try {
+        const { data, error } = await sb.from('complaints').select('*').order('created_at', { ascending: false });
+        if (error) {
+          console.warn("Supabase query notice:", error);
+          hasDbError = true;
+        } else {
+          fetchedData = data || [];
+        }
+      } catch (err) {
+        console.warn("Supabase fetch exception:", err);
+        hasDbError = true;
+      }
+
+      // Check local storage for any offline/cached submissions
+      const localTickets = JSON.parse(localStorage.getItem('tvk_tickets') || '[]');
+
+      if (hasDbError || fetchedData === null) {
+        // Show schema setup warning banner
+        const banner = document.getElementById('schema-alert-banner');
+        if (banner) banner.classList.remove('hidden');
+
+        // Map local tickets so staff can view and manage immediately
+        allComplaints = localTickets.map((t, idx) => ({
+          id: t.id || `local-${idx}`,
+          ticket_id: t.ticket_id || t.id || `TVK-LOCAL-${idx + 1}`,
+          full_name: t.full_name || t.name || 'Citizen',
+          mobile: t.mobile || '—',
+          address: t.address || '—',
+          ward: t.ward || '—',
+          street: t.street || '',
+          category: t.category || 'General',
+          description: t.description || '',
+          type: t.type || 'needs',
+          status: t.status || 'Submitted',
+          audio_url: t.audio_url || null,
+          image_url: t.image_url || null,
+          assigned_officer: t.assigned_officer || null,
+          created_at: t.created_at || (t.date ? new Date(t.date).toISOString() : new Date().toISOString())
+        }));
+      } else {
+        const banner = document.getElementById('schema-alert-banner');
+        if (banner) banner.classList.add('hidden');
+
+        // Supabase is working! Merge any local tickets that might not yet be in Supabase
+        const existingTicketIds = new Set(fetchedData.map(c => (c.ticket_id || '').toUpperCase()));
+        const missingFromDb = localTickets.filter(t => (t.ticket_id || t.id) && !existingTicketIds.has((t.ticket_id || t.id).toUpperCase()));
+
+        if (missingFromDb.length > 0) {
+          // Attempt to sync missing local tickets to Supabase
+          for (const item of missingFromDb) {
+            try {
+              const payload = {
+                ticket_id: item.ticket_id || item.id,
+                full_name: item.full_name || item.name || 'Citizen',
+                mobile: item.mobile || '—',
+                address: item.address || '—',
+                ward: item.ward || '—',
+                street: item.street || '',
+                category: item.category || 'General',
+                description: item.description || '',
+                type: item.type || 'needs',
+                status: item.status || 'Submitted',
+                audio_url: item.audio_url || null,
+                image_url: item.image_url || null,
+                media_key: item.media_key || null,
+                created_at: item.created_at || new Date().toISOString()
+              };
+              const { data: inserted } = await sb.from('complaints').insert([payload]).select();
+              if (inserted && inserted[0]) {
+                fetchedData.unshift(inserted[0]);
+              }
+            } catch (syncErr) {
+              console.warn('Auto-sync ticket error:', syncErr);
+            }
+          }
+        }
+
+        allComplaints = fetchedData;
+      }
+
       filteredComplaints = [...allComplaints];
       updateCountBadges();
       renderDashboard();
@@ -1606,26 +1708,19 @@
       const officer = input?.value?.trim();
 
       try {
-        const res = await fetch('/api/update-ticket', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            action: 'assign_officer',
-            id: id,
-            officer: officer,
-            updated_by: currentUser ? currentUser.email : 'Staff'
-          })
-        });
-
-        if (!res.ok) {
-          const { error } = await sb.from('complaints').update({ assigned_officer: officer }).eq('id', id);
-          if (error) throw error;
-        }
+        await sb.from('complaints').update({ assigned_officer: officer }).eq('id', id);
       } catch (err) {
-        console.warn('API route fallback:', err);
-        const { error } = await sb.from('complaints').update({ assigned_officer: officer }).eq('id', id);
-        if (error) { alert('Error: ' + error.message); return; }
+        console.warn('DB assign error, saving locally:', err);
       }
+
+      try {
+        const stored = JSON.parse(localStorage.getItem('tvk_tickets') || '[]');
+        const idx = stored.findIndex(x => (x.id === id || x.ticket_id === id));
+        if (idx !== -1) {
+          stored[idx].assigned_officer = officer;
+          localStorage.setItem('tvk_tickets', JSON.stringify(stored));
+        }
+      } catch (_) {}
 
       await loadAllData();
       openDetail(id);
@@ -1634,26 +1729,19 @@
     // ===== UPDATE STATUS =====
     async function updateStatus(id, newStatus) {
       try {
-        const res = await fetch('/api/update-ticket', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            action: 'update_status',
-            id: id,
-            status: newStatus,
-            updated_by: currentUser ? currentUser.email : 'Staff'
-          })
-        });
-
-        if (!res.ok) {
-          const { error } = await sb.from('complaints').update({ status: newStatus }).eq('id', id);
-          if (error) throw error;
-        }
+        await sb.from('complaints').update({ status: newStatus }).eq('id', id);
       } catch (err) {
-        console.warn('API route fallback:', err);
-        const { error } = await sb.from('complaints').update({ status: newStatus }).eq('id', id);
-        if (error) { alert('Error: ' + error.message); return; }
+        console.warn('DB status error, saving locally:', err);
       }
+
+      try {
+        const stored = JSON.parse(localStorage.getItem('tvk_tickets') || '[]');
+        const idx = stored.findIndex(x => (x.id === id || x.ticket_id === id));
+        if (idx !== -1) {
+          stored[idx].status = newStatus;
+          localStorage.setItem('tvk_tickets', JSON.stringify(stored));
+        }
+      } catch (_) {}
 
       await loadAllData();
       openDetail(id);
