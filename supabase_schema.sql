@@ -6,10 +6,13 @@
 -- Unions:
 --   1. திண்டுக்கல் மேற்கு ஒன்றியம் (Dindigul West Union)
 --   2. திண்டுக்கல் கிழக்கு ஒன்றியம் (Dindigul East Union)
---   3. வேடசந்தூர் வடக்கு ஒன்றியம் (Vedasandur North Union)
---   4. வேடசந்தூர் தெற்கு ஒன்றியம் (Vedasandur South Union)
---   5. குஜிலியம்பாறை மேற்கு ஒன்றியம் (Gujiliamparai West Union)
---   6. குஜிலியம்பாறை கிழக்கு ஒன்றியம் (Gujiliamparai East Union)
+--   3. திண்டுக்கல் தெற்கு ஒன்றியம் (Dindigul South Union)
+--   4. வேடசந்தூர் வடக்கு ஒன்றியம் (Vedasandur North Union)
+--   5. வேடசந்தூர் தெற்கு ஒன்றியம் (Vedasandur South Union)
+--   6. குஜிலியம்பாறை மேற்கு ஒன்றியம் (Gujiliamparai West Union)
+--   7. குஜிலியம்பாறை கிழக்கு ஒன்றியம் (Gujiliamparai East Union)
+--   8. வடமதுரை மேற்கு (Vadamadurai West)
+--   9. வடமதுரை கிழக்கு (Vadamadurai East)
 --
 -- Supabase PostgreSQL Database Schema
 -- Run this in Supabase Dashboard -> SQL Editor -> New Query -> Run
