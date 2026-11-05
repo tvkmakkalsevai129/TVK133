@@ -3,7 +3,7 @@
 -- Leader: Thiru L. Dharmaraj (TVK Vedasandur & Dindigul East District Secretary)
 -- Tamil Title: திண்டுக்கல் கிழக்கு மாவட்ட செயலாளர் திரு L. தர்மராஜ்
 -- Constituencies: Vedasandur & Dindigul (வேடசந்தூர் மற்றும் திண்டுக்கல் தொகுதி)
--- Unions:
+-- Unions & Local Bodies (13 total):
 --   1. திண்டுக்கல் மேற்கு ஒன்றியம் (Dindigul West Union)
 --   2. திண்டுக்கல் கிழக்கு ஒன்றியம் (Dindigul East Union)
 --   3. திண்டுக்கல் தெற்கு ஒன்றியம் (Dindigul South Union)
@@ -13,6 +13,10 @@
 --   7. வடமதுரை கிழக்கு ஒன்றியம் (Vadamadurai East Union)
 --   8. குஜிலியம்பாறை மேற்கு ஒன்றியம் (Gujiliamparai West Union)
 --   9. குஜிலியம்பாறை கிழக்கு ஒன்றியம் (Gujiliamparai East Union)
+--   10. எரியோடு பேரூராட்சி (Eriyodu Town Panchayat)
+--   11. வேடசந்தூர் பேரூராட்சி (Vedasandur Town Panchayat)
+--   12. பாளையம் பேரூராட்சி (Palayam Town Panchayat)
+--   13. திண்டுக்கல் மாநகர தலைமை (Dindigul Corporation Headquarters)
 --
 -- Supabase PostgreSQL Database Schema
 -- Run this in Supabase Dashboard -> SQL Editor -> New Query -> Run
