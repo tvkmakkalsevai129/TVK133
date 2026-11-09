@@ -86,8 +86,12 @@
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-4 lg:gap-6 text-sm font-medium shrink-0">
+      <nav class="hidden md:flex items-center gap-3.5 lg:gap-5 text-sm font-medium shrink-0">
         <a class="text-white hover:text-[#FFD700] transition-colors whitespace-nowrap py-1 font-medium" href="track.html" id="t-trackNav">Track Complaint</a>
+        <a href="https://tvk.family/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 bg-[#FFD700]/15 hover:bg-[#FFD700] text-[#FFD700] hover:text-[#7F1212] border border-[#FFD700]/70 px-3 py-1.5 rounded-full font-bold text-xs transition-all shadow-sm whitespace-nowrap hover:scale-105" title="Official TVK Membership Card (உறுப்பினர் அட்டை)">
+          <span id="t-navMembership">Membership Card</span>
+          <svg class="w-3.5 h-3.5 opacity-80" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
         <button onclick="toggleLanguage()" class="text-xs font-semibold px-2.5 py-1 rounded transition-colors border border-white/40 text-white hover:bg-white/15 cursor-pointer whitespace-nowrap" id="lang-btn">
           தமிழ்
         </button>
@@ -98,6 +102,9 @@
 
       <!-- Mobile Menu Toggle Button (Compact & Zero-Overflow) -->
       <div class="md:hidden flex items-center gap-1.5 shrink-0">
+        <a href="https://tvk.family/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 bg-[#FFD700] text-[#7F1212] font-black text-[11px] px-2.5 py-1 rounded-full shadow-sm whitespace-nowrap" title="TVK Membership Card">
+          <span>Membership ↗</span>
+        </a>
         <button onclick="toggleLanguage()" class="text-[11px] sm:text-xs font-semibold px-2 py-1 rounded border border-white/40 text-white cursor-pointer" id="mobile-lang-btn">
           தமிழ்
         </button>
@@ -110,9 +117,12 @@
     </div>
 
     <!-- Mobile dropdown menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-[#7F1212] px-4 py-3 border-t border-red-800 flex flex-col gap-3 text-sm font-medium">
+    <div id="mobile-menu" class="hidden md:hidden bg-[#7F1212] px-4 py-3 border-t border-red-800 flex flex-col gap-2.5 text-sm font-medium">
       <a class="text-white hover:text-[#FFD700] py-1" href="track.html" id="t-mobileTrackNav">Track Complaint</a>
-      <a class="bg-[#FFD700] text-[#7F1212] px-4 py-2 rounded text-center font-bold" href="login.html" id="t-mobileLoginNav">Staff Login</a>
+      <a class="flex items-center justify-center gap-2 bg-[#FFD700] text-[#7F1212] px-4 py-2 rounded-lg font-bold shadow-sm" href="https://tvk.family/" target="_blank" rel="noopener noreferrer" id="t-mobileMembershipNav">
+        TVK Membership Card (உறுப்பினர் அட்டை) ↗
+      </a>
+      <a class="bg-white/10 text-white hover:bg-white/20 border border-white/30 px-4 py-2 rounded-lg text-center font-bold" href="login.html" id="t-mobileLoginNav">Staff Login</a>
     </div>
   </header>
 
@@ -148,13 +158,22 @@
               Submit a complaint or a personal need to the TVK Vedasandur & Dindigul East District Secretary (Thiru L. Dharmaraj) office. We track every request and keep you updated.
             </p>
 
-            <!-- Yellow CTA Button -->
-            <a href="#complaint-form" class="inline-flex items-center gap-2 bg-[#FFD700] text-[#7F1212] font-bold px-7 py-3 rounded-full shadow-lg hover:bg-yellow-300 transition-colors text-sm sm:text-base">
-              <span id="t-heroCta">Submit a Complaint</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
-                <path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path>
-              </svg>
-            </a>
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-3.5">
+              <!-- Yellow CTA Button -->
+              <a href="#complaint-form" class="inline-flex items-center gap-2 bg-[#FFD700] text-[#7F1212] font-black px-7 py-3 rounded-full shadow-lg hover:bg-yellow-300 transition-all text-sm sm:text-base cursor-pointer hover:shadow-xl">
+                <span id="t-heroCta">Submit a Complaint</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                  <path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path>
+                </svg>
+              </a>
+
+              <!-- TVK Membership Card Button -->
+              <a href="https://tvk.family/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-black/25 hover:bg-black/40 text-[#FFD700] border-2 border-[#FFD700] font-black px-6 py-3 rounded-full shadow-lg backdrop-blur-sm transition-all text-sm sm:text-base hover:scale-105 group cursor-pointer" title="Get Official TVK Membership Card">
+                <span id="t-heroMembershipCta">TVK Membership Card</span>
+                <svg class="w-4 h-4 opacity-80 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
           </div>
 
           <!-- Leaders Section (K. Vignesh + Thiru L. Dharmaraj) -->
@@ -749,7 +768,9 @@
         cardRole: "TVK Vedasandur & Dindigul East District Secretary",
         cardConst: "Vedasandur & Dindigul",
         cardPartyPill: "Tamilaga Vettri Kazhagam",
-        cardConstPill: "Vedasandur & Dindigul"
+        cardConstPill: "Vedasandur & Dindigul",
+        navMembership: "Membership Card",
+        heroMembershipCta: "TVK Membership Card"
       },
       ta: {
         langBtn: "English",
@@ -793,7 +814,9 @@
         cardRole: "திண்டுக்கல் கிழக்கு மாவட்ட செயலாளர்",
         cardConst: "வேடசந்தூர் மற்றும் திண்டுக்கல் தொகுதி",
         cardPartyPill: "தமிழக வெற்றிக் கழகம்",
-        cardConstPill: "வேடசந்தூர் மற்றும் திண்டுக்கல் தொகுதி"
+        cardConstPill: "வேடசந்தூர் மற்றும் திண்டுக்கல் தொகுதி",
+        navMembership: "உறுப்பினர் அட்டை",
+        heroMembershipCta: "டிவிகே உறுப்பினர் அட்டை"
       }
     };
 
@@ -805,10 +828,16 @@
       document.getElementById('mobile-lang-btn').textContent = t.langBtn;
       document.getElementById('t-trackNav').textContent = t.trackNav;
       document.getElementById('t-loginNav').textContent = t.loginNav;
+      const navMem = document.getElementById('t-navMembership');
+      if (navMem) navMem.textContent = t.navMembership;
+      const heroMem = document.getElementById('t-heroMembershipCta');
+      if (heroMem) heroMem.textContent = t.heroMembershipCta;
       const mTrack = document.getElementById('t-mobileTrackNav');
       if (mTrack) mTrack.textContent = t.trackNav;
       const mLogin = document.getElementById('t-mobileLoginNav');
       if (mLogin) mLogin.textContent = t.loginNav;
+      const mMem = document.getElementById('t-mobileMembershipNav');
+      if (mMem) mMem.textContent = `${t.heroMembershipCta} ↗`;
       document.getElementById('t-orgName').textContent = t.orgName;
       document.getElementById('t-constituency').textContent = t.constituency;
       document.getElementById('t-heroTitle').innerHTML = t.heroTitle;
